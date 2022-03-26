@@ -1,0 +1,11 @@
+<nav class="menu">
+    <a *ngFor="let item of mainMenuItems" [ngClass]="[item?.id == selectedType?.id ? 'main-menu-active' : 'main-menu-inactive']" (click)="handleClickMainMenuItem(item)" [routerLink]="item.link" class="menu__item">
+        <img class="menu__icon" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAw%0D%0AL3N2ZyI+CgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9Im5v%0D%0AbmUiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSI0MDIiIHdpZHRoPSI1ODIiIHk9Ii0x%0D%0AIiB4PSItMSIvPgogPC9nPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGZp%0D%0AbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIgZD0ibTIwLDQwbDAsLTEybDgsMGwwLDEybDEwLDBsMCwt%0D%0AMTZsNiwwbC0yMCwtMThsLTIwLDE4bDYsMGwwLDE2bDEwLDB6Ii8+CiA8L2c+Cjwvc3ZnPg=="
+        />
+        <span class="menu__text">{{ item.name }}</span>
+    </a>
+</nav>
+
+<div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig?.path">
+    <router-outlet #o="outlet"></router-outlet>
+</div>

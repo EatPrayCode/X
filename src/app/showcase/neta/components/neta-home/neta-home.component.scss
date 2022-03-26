@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+figure {
+    margin: 0;
+}
+
+html,
+body,
+.bank {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+.bank {
+    background-color: #eceef3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.mobile {
+    margin: 10px;
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: -3px 2px 19px #dadada;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin: 20px 0;
+}
+
+.profile__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #96edc9;
+    border-radius: 40%;
+    margin: 0;
+}
+
+.profile__avatar img {
+    width: 50%;
+}
+
+.profile__name {
+    font-weight: 600;
+    margin: 0 20px;
+    font-size: 15px;
+}
+
+.balance {
+    margin: 20px 0;
+}
+
+.balance__text {
+    font-size: 15px;
+    color: #979797;
+    margin-bottom: 10px;
+}
+
+.balance__amount {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgb(48, 188, 238);
+    background: linear-gradient(90deg, rgba(48, 188, 238, 1) 0%, rgba(21, 208, 149, 1) 100%);
+    margin: 20px 0;
+    border-radius: 20px;
+    padding: 25px 30px;
+}
+
+.card__information {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__information__text {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 26px;
+    font-weight: 600;
+    margin-right: 25px;
+}
+
+.card__button {
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.nav {
+    display: flex;
+}
+
+.tabs {
+    min-height: 35%;
+}
+
+.nav__tab {
+    font-size: 16px;
+    font-weight: 600;
+    color: #979797;
+    width: 150px;
+    cursor: pointer;
+}
+
+.nav__tab--active {
+    color: #000000;
+}
+
+.indicator {
+    display: inline-block;
+    background-color: #38c1ff;
+    height: 4px;
+    border-radius: 20px;
+    vertical-align: 3px;
+    transform: translate(calc(var(--i)* 150px));
+    transition-duration: 0.3s;
+}
+
+.content {
+    margin-top: 15px;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    height: 0;
+}
+
+.content:first-child {
+    opacity: 1;
+    height: auto;
+}
+
+.today {
+    display: flex;
+    justify-content: space-between;
+    color: #d5d5d5;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.transaction__who {
+    display: flex;
+    align-items: center;
+}
+
+.transaction__who figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    margin-right: 20px;
+}
+
+.transaction__who img {
+    width: 40%;
+}
+
+.transaction__who__name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.transaction__who__type {
+    color: #d5d5d5;
+    font-size: 13px;
+}
+
+.transaction__data__amount {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.transaction__data__amount--depot {
+    color: #58c87e;
+}
+
+.transaction__data__date {
+    color: #d5d5d5;
+    font-size: 13px;
+    text-align: right;
+}
+
+.transaction__who--apple figure,
+.transaction__who--amazon figure {
+    background-color: black;
+}
+
+.transaction__who--tom figure {
+    background-color: #5cdfac;
+}
+
+.transaction__who--tom figure img,
+.transaction__who--amazon figure img {
+    width: 50%;
+}
+
+
+/* 
+Designed by : https://dribbble.com/shots/15415867-CapWay-Redesign-Mobile-Banking-App */

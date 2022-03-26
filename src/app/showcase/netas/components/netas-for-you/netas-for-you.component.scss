@@ -1,0 +1,37 @@
+.access-link-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    &:nth-child(1) {
+        .access-icon {
+            background-color: #6166fe;
+        }
+    }
+    &:nth-child(2) {
+        .access-icon {
+            background-color: #6166fe;
+        }
+    }
+    &:nth-child(3) {
+        .access-icon {
+            background-color: #3275f7;
+        }
+    }
+    &:nth-child(4) {
+        .access-icon {
+            background-color: #3275f7;
+        }
+    }
+    &:nth-child(5) {
+        .access-icon {
+            background-color: #22244a;
+        }
+    }
+    &:nth-child(6) {
+        .access-icon {
+            background-color: #22244a;
+        }
+    }
+}
