@@ -3,6 +3,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { AppConfig } from './domain/appconfig';
 import { AppConfigService } from './service/appconfigservice';
+import { StateService } from './services/state.service';
 
 @Component({
     selector: 'app-root',
@@ -11,13 +12,25 @@ import { AppConfigService } from './service/appconfigservice';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-    constructor(private configService: AppConfigService, private primengConfig: PrimeNGConfig) {}
+  initAuth(): void {
+    this.stateService.appSettingsSubject.subscribe(res => {
+      console.log(res);
+    });
+    this.stateService.getAppUser().subscribe();
+  }
+
+    constructor(
+        public stateService: StateService,
+        private configService: AppConfigService, 
+        private primengConfig: PrimeNGConfig
+        ) {}
        
     config: AppConfig;
 
     public subscription: Subscription;
 
     ngOnInit() {
+        this.initAuth();
         this.config = {theme: 'lara-light-blue', dark: false}
 
         this.subscription = this.configService.configUpdate$.subscribe( config => {
