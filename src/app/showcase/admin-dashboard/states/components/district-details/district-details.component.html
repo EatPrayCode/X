@@ -1,0 +1,57 @@
+<p>District details</p>
+
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip color="primary" selected>
+    Primary theme chip
+  </mat-chip>
+
+  <mat-chip color="accent" selected>
+    Accent theme chip
+  </mat-chip>
+
+  <mat-chip color="warn" selected>
+    Warn theme chip
+  </mat-chip>
+
+  <mat-chip>Default theme chip </mat-chip>
+</mat-chip-list>
+<br>
+<div *ngIf="(stateDetails$ | async) as stateDetails">
+  {{stateDetails|json}}
+</div>
+<button mat-button (click)="addConstituency()">Add Constituency</button>
+
+<mat-nav-list class="nav-list">
+  <mat-list-item *ngFor="let unit of districts$ | async">
+
+    <img
+      src="https://www.freakyjolly.com/wp-content/uploads/2021/07/cropped-cropped-fj-logo-192-removebg-preview-e1625997712615-1.png"
+      mat-card-avatar />
+
+    <h3 matLine>{{unit.name}}</h3>
+    <p matLine style="color: #999; font-weight: lighter;">
+      <span>{{unit.description}}</span>
+    </p>
+
+    <h3 matLine>{{unit.age}}</h3>
+
+    <span fxFlex="120px" fxLayout="column" fxLayoutAlign="space-around center" fxHide.lt-sm>
+      <div>
+        <span>{{unit.designation}}</span>
+      </div>
+      <small matLine (click)="viewConstituency(unit)">View</small>
+    </span>
+
+    <button mat-icon-button matTooltip="Opções" (click)="showMenu(unit)">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+  </mat-list-item>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Button 1</button>
+  </mat-menu>
+
+</mat-nav-list>

@@ -1,0 +1,51 @@
+<!-- <mat-vertical-stepper (selectionChange)="goto_component($event)">
+    <mat-step *ngFor="let group of stepsObj; let i = index">
+        <ng-template matStepLabel>Step {{i}}</ng-template>
+
+        Step {{i}}
+
+        <router-outlet></router-outlet>
+
+        <div>
+            <button mat-button class="prev_btn" matStepperPrevious>Back</button>
+            <button class="next_btn" mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper> -->
+
+<!-- Steps List: {{stepsList.length}}
+<button (click)="handleSelectMsgTypeEvt({value:'paid'})">Paid</button>
+<button (click)="handleSelectMsgTypeEvt({value:'free'})">Free</button> -->
+<mat-vertical-stepper [selectedIndex]="selectedIndex" [linear]="isLinear" #stepper (selectionChange)="goto_component($event)">
+    <mat-step *ngFor="let step of stepsList; let i = index">
+        <ng-template matStepLabel>{{step.label}}</ng-template>
+        <!-- {{step|json}} -->
+        <app-ticket-info (selectMsgTypeEvt)="handleSelectMsgTypeEvt($event)" *ngIf="step?.id == 'ticket-info'"></app-ticket-info>
+        <app-ticket-options *ngIf="step?.id == 'ticket-options'"></app-ticket-options>
+        <app-ticket-payment *ngIf="step?.id == 'ticket-payment'"></app-ticket-payment>
+        <app-ticket-summary *ngIf="step?.id == 'ticket-submitted'"></app-ticket-summary>
+        <button mat-button class="prev_btn" (click)="handlePrevClick(step)">Back</button>
+        <button class="next_btn" mat-button (click)="handleNextClick(step)">Next</button>
+    </mat-step>
+    <!-- <mat-step [stepControl]="stepTwo">
+        <ng-template matStepLabel>Options</ng-template>
+        <app-ticket-options></app-ticket-options>
+        <button mat-button class="prev_btn" matStepperPrevious>Back</button>
+        <button class="next_btn" mat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step [stepControl]="stepThree">
+        <ng-template matStepLabel>Payment</ng-template>
+        <app-ticket-payment></app-ticket-payment>
+        <button mat-button class="prev_btn" matStepperPrevious>Back</button>
+        <button class="next_btn" mat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step [stepControl]="stepFour">
+        <ng-template matStepLabel>Done</ng-template>
+        <app-ticket-summary></app-ticket-summary>
+        <div>
+            <button mat-button [routerLink]="['/connect/view-messages/DEFAULT']">All Messages</button>
+            <button mat-button [routerLink]="['/connect/raise-ticket']">New Message</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step> -->
+</mat-vertical-stepper>

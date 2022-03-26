@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
+*,
+*:after,
+*:before {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.upperCard {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/990368/BMW.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    height: 180px;
+    width: 100%;
+    color: #fff;
+    padding: 65px 0 0 30px;
+}
+
+.upperCard h1 {
+    font-size: 25px;
+}
+
+.upperCard p {
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.lowerCard {
+    overflow: visible;
+    position: relative;
+    height: 180px;
+    width: 100%;
+    background: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lowerCard button {
+    position: absolute;
+    top: -25px;
+    left: 30px;
+    width: auto;
+    height: auto;
+    font-size: 16.5px;
+    font-weight: 700;
+    border-radius: 25px;
+    border: none;
+    padding: 15px 28px;
+    background: #9c68f0;
+    color: white;
+    letter-spacing: .3px;
+    cursor: pointer;
+    transition: background .5s;
+    box-shadow: 0px 2px 2px #dbc3ff;
+    outline: none;
+}
+
+.lowerCard button:hover {
+    transition: background .3s;
+    background: #a983f0;
+}
+
+.lowerCard ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+.lowerCard .rHeading {
+    position: relative;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.lowerCard .rHeading:after,
+.lowerCard .rHeading:before {
+    position: absolute;
+}
+
+.lowerCard .rHeading:before {
+    bottom: 3px;
+    left: 0;
+    white-space: nowrap;
+    float: left;
+    content: '.................................................................' '.................................................................';
+}
+
+.lowerCard .rHeading span {
+    background: #fff;
+    z-index: 999;
+    position: relative;
+}
+
+.lowerCard .rHeading span:first-child {
+    padding-right: 10px;
+    color: #000;
+}
+
+.lowerCard .rHeading span:last-child {
+    padding-left: 10px;
+    float: right;
+    font-weight: 700;
+    font-size: 13px;
+    padding-top: 2px;
+}
+
+.lowerCard .rDescription {
+    overflow: visible;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.lowerCard .rDescription span {
+    float: right;
+    font-size: 11px;
+    font-weight: 900;
+    margin-top: 0px;
+    color: #000;
+}
+
+.lowerCard .rDescription b {
+    font-size: 11px;
+    color: #000;
+}
+
+@media only screen and (min-width: 450px) {
+    .upperCard {
+        padding: 50px 0 0 70px;
+    }
+    .lowerCard {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .lowerCard button {
+        left: 70px;
+    }
+    .lowerCard .rDescription span {
+        margin-top: -8px;
+    }
+    .lowerCard .rDescription b {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 700px) {}

@@ -114,7 +114,24 @@ import { AppMainComponent } from './app.main.component';
                     {path: 'treeselect', loadChildren: () => import('./components/treeselect/treeselectdemo.module').then(m => m.TreeSelectDemoModule)},
                     {path: 'treetable', loadChildren: () => import('./components/treetable/treetabledemo.module').then(m => m.TreeTableDemoModule)},
                     {path: 'tristatecheckbox', loadChildren: () => import('./components/tristatecheckbox/tristatecheckboxdemo.module').then(m => m.TriStateCheckboxDemoModule)},
-                    {path: 'virtualscroller', loadChildren: () => import('./components/virtualscroller/virtualscrollerdemo.module').then(m => m.VirtualScrollerDemoModule)}
+                    {path: 'virtualscroller', loadChildren: () => import('./components/virtualscroller/virtualscrollerdemo.module').then(m => m.VirtualScrollerDemoModule)},
+                    {
+                        path: 'dashboard',
+                        loadChildren: () =>
+                          import('./campaigns/connect.module').then((m) => m.ConnectModule),
+                        // resolve: {
+                        //   profile: AppResolver
+                        // },
+                        // resolve: {
+                        //   profile: AppProtectedResolver
+                        // }
+                        // canActivate: [MarketingGuardService]
+                      },
+                      {
+                        path: 'admin-dashboard',
+                        loadChildren: () =>
+                          import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
+                      },
                 ],
             },
         ],{scrollPositionRestoration: 'enabled'})
