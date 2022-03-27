@@ -1,6 +1,6 @@
-<div class="landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
+<div class="layout-wrapper landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
 
-    <div class="landing-intro">
+    <div class="">
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
                 <a href="/">
@@ -59,8 +59,13 @@
                 </button>
             </div>
         </section>
-
-        <router-outlet></router-outlet>
     </div>
 
+    <div class="layout-content">
+        <div class="layout-content-inner h-full">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+    
 </div>

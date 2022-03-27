@@ -400,11 +400,20 @@ pre[class*=language-] code .token.operator, pre[class*=language-] code .token.st
 }
 .layout-wrapper .layout-content {
   padding-top: 70px;
-  margin-left: 250px;
+  /* margin-left: 250px; */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
+
+.layout-wrapper .layout-content-new {
+  /* padding-top: 70px; */
+  margin-left: 250px;
+  /* flex-grow: 1; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
 .layout-wrapper .layout-content .content-section {
   padding: 2rem;
   flex-grow: 1;
