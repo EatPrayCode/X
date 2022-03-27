@@ -1,10 +1,10 @@
-<div class="layout-wrapper {{config.dark ? 'layout-wrapper-dark' : 'layout-wrapper-light'}}">
+<div class="layout-wrapper landing {{config.dark ? 'layout-wrapper-dark' : 'layout-wrapper-light'}}">
     <app-topbar (menuButtonClick)="onMenuButtonClick()"></app-topbar>
     <app-config></app-config>
     <app-menu [active]="menuActive"></app-menu>
     <div class="layout-mask" [ngClass]="{'layout-mask-active': menuActive}" (click)="onMaskClick()"></div>
-    
-    <div class="layout-content layout-content-new">
+
+    <div class="landing-intro layout-content layout-content-new">
         <div class="layout-content-inner h-full">
             <router-outlet></router-outlet>
         </div>
