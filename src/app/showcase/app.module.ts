@@ -1,3 +1,4 @@
+import { AppBlankComponent } from './app.blank.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -61,7 +62,8 @@ import { CoreModule } from './core/core.module';
         AppConfigComponent,
         AppFooterComponent,
         LandingComponent,
-        AppMainComponent
+        AppMainComponent,
+        AppBlankComponent
     ],
     imports: [
         FormsModule,

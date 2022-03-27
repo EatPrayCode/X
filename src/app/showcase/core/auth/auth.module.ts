@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SigninComponent } from './components/signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ChooseAppSettingsModalComponent } from './components/choose-app-settings-modal/choose-app-settings-modal.component';
 import { DemoMaterialModule } from '../../shared/demo-material-module';
+import { ChooseAppSettingsModalComponent } from './components/choose-app-settings-modal/choose-app-settings-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { DemoMaterialModule } from '../../shared/demo-material-module';
   ],
   exports: [
     SigninComponent,
-    SigninMobileComponent
+    SigninMobileComponent,
+    ChooseAppSettingsModalComponent
   ]
 })
 export class AuthModule { }

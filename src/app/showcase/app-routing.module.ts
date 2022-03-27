@@ -1,3 +1,4 @@
+import { AppBlankComponent } from './app.blank.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './components/landing/landing.component';
@@ -7,7 +8,8 @@ import { AppMainComponent } from './app.main.component';
     imports: [
         RouterModule.forRoot([
             {path: '', component: LandingComponent, pathMatch: 'full'},
-            {path: '', component: AppMainComponent, 
+            {path: '', component: AppBlankComponent
+            , 
                 children:[
                     {path: '', redirectTo:'setup', pathMatch:'full'},
                     {path: 'netas', loadChildren: () => import('./components/politicians/avatardemo.module').then(m => m.AvatarDemoModule)},

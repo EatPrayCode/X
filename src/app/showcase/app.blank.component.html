@@ -1,0 +1,74 @@
+<div class="landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
+
+    <app-config></app-config>
+
+    <div class="">
+        <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
+            <span>
+                <a href="/">
+                    <img src="assets/showcase/images/primeng-logo-{{config.dark ? 'light' : 'dark'}}.svg" alt="PrimeNG"
+                        class="landing-header-logo">
+                </a>
+            </span>
+
+            <div class="flex align-items-center">
+                <nav class="scalein origin-top">
+                    <ol
+                        class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
+                        <li class="mr-0 lg:mr-2">
+                            <a [routerLink]="['setup']">
+                                <img src="assets/showcase/images/landing/core-icon.svg" alt="Primeng core">
+                                <span>Components</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2">
+                            <a href="https://www.primefaces.org/primeblocks-ng" target="_blank">
+                                <img src="assets/showcase/images/landing/blocks-icon.svg" alt="Primeng blocks">
+                                <span>Blocks</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2">
+                            <a href="https://www.primefaces.org/designer-ng" target="_blank">
+                                <img src="assets/showcase/images/landing/designer-icon.svg" alt="Primeng designer">
+                                <span>Designer</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2">
+                            <a href="https://www.primefaces.org/store/templates.xhtml" target="_blank">
+                                <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
+                                <span>Templates</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+                <a href="https://github.com/primefaces/primeng" target="_blank" rel="noopener noreferrer"
+                    class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
+                    <i class="pi pi-github"></i>
+                </a>
+                <a href="https://discord.gg/gzKFYnpmCY" target="_blank" rel="noopener noreferrer"
+                    class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
+                    <i class="pi pi-discord"></i>
+                </a>
+                <button type="button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center"
+                    (click)="toggleDarkMode()">
+                    <i class="pi pi-{{config.dark ? 'sun' : 'moon'}}"></i>
+                </button>
+                <button
+                    class="linkbox header-button inline-flex align-items-center justify-content-center lg:hidden ml-2 menu-button"
+                    (click)="menuActive = !menuActive">
+                    <i class="pi pi-bars"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="layout-mask" [ngClass]="{'layout-mask-active': menuActive}" (click)="onMaskClick()"></div>
+    <div class="layout-content">
+        <div class="layout-content-inner h-full" [ngStyle]="{'min-height': clientHeight + 'px', 'margin-bottom': '-79px'}">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+
+</div>
