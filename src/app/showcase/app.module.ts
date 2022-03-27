@@ -52,6 +52,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { AppMainComponent } from './app.main.component';
 import { CoreModule } from './core/core.module';
 import { AppTopBarInnerPagesComponent } from './app.topbar-inner-pages.component';
+import { AppLayoutComponent } from './app.layout.component';
 
 @NgModule({
     declarations: [
@@ -65,7 +66,8 @@ import { AppTopBarInnerPagesComponent } from './app.topbar-inner-pages.component
         LandingComponent,
         AppMainComponent,
         AppBlankComponent,
-        AppTopBarInnerPagesComponent
+        AppTopBarInnerPagesComponent,
+        AppLayoutComponent
     ],
     imports: [
         FormsModule,

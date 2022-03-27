@@ -4,8 +4,6 @@ import { AppConfig } from './domain/appconfig';
 import { Subscription } from 'rxjs';
 import { PrimeNGConfig } from 'primeng/api';
 
-
-
 import { MatDialog } from '@angular/material/dialog';
 import browser from 'browser-detect';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';

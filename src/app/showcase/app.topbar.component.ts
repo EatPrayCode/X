@@ -18,7 +18,24 @@ import { Subscription } from 'rxjs';
             </div>
             <ul #topbarMenu class="topbar-menu">
                 <li class="topbar-submenu">
-                    <a tabindex="0" (click)="toggleMenu($event, 0)">Themes</a>
+                    <a tabindex="0" [routerLink]="['netas']">Netas</a>
+                </li>
+                <li class="topbar-submenu">
+                    <a tabindex="0" [routerLink]="['news']">News</a>
+                </li>
+                <li class="topbar-submenu">
+                    <a tabindex="0" [routerLink]="['blog']">Blog</a>
+                </li>
+                <li class="topbar-submenu">
+                    <a tabindex="0" [routerLink]="['store']">Store</a>
+                </li>
+
+                <li class="topbar-submenu">
+                    <a tabindex="0" [routerLink]="['services']">Services</a>
+                </li>
+                
+                <!-- <li class="topbar-submenu">
+                    <a tabindex="0" (click)="toggleMenu($event, 0)">Netas</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 0" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
                         <li class="topbar-submenu-header">THEMING</li>
                         <li><a [routerLink]="['/showcase/theming']"><i class="pi pi-fw pi-file"></i><span>Guide</span></a></li>
@@ -99,7 +116,7 @@ import { Subscription } from 'rxjs';
                     </ul>
                 </li>
                 <li class="topbar-submenu">
-                    <a tabindex="0" (click)="toggleMenu($event, 1)">Templates</a>
+                    <a tabindex="0" (click)="toggleMenu($event, 1)">Blog</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 1" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
                         <li class="topbar-submenu-header">PREMIUM ADMIN TEMPLATES</li>
                         <li>
@@ -249,7 +266,10 @@ import { Subscription } from 'rxjs';
                     </ul>
                 </li>
                 <li class="topbar-submenu">
-                    <a tabindex="0" href="https://www.primefaces.org/primeblocks-ng/" target="_blank">Blocks</a>
+                    <a tabindex="0" href="https://www.primefaces.org/primeblocks-ng/">Store</a>
+                </li>
+                <li class="topbar-submenu">
+                    <a tabindex="0" href="https://www.primefaces.org/primeblocks-ng/">Store</a>
                 </li>
                 <li class="topbar-submenu">
                     <a tabindex="0" (click)="toggleMenu($event, 3)">{{versions ? versions[0].version : 'Latest'}}</a>
@@ -258,19 +278,19 @@ import { Subscription } from 'rxjs';
                             <a [href]="v.url">{{v.version}}</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
     `,
     animations: [
         trigger('overlayMenuAnimation', [
             transition(':enter', [
-                style({opacity: 0, transform: 'scaleY(0.8)'}),
+                style({ opacity: 0, transform: 'scaleY(0.8)' }),
                 animate('.12s cubic-bezier(0, 0, 0.2, 1)', style({ opacity: 1, transform: '*' })),
-              ]),
-              transition(':leave', [
+            ]),
+            transition(':leave', [
                 animate('.1s linear', style({ opacity: 0 }))
-              ])
+            ])
         ])
     ]
 })
@@ -346,7 +366,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
     scrollListener: any;
 
-    constructor(private router: Router, private versionService: VersionService, private configService: AppConfigService) {}
+    constructor(private router: Router, private versionService: VersionService, private configService: AppConfigService) { }
 
     ngOnInit() {
         this.config = this.configService.config;
@@ -356,7 +376,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
                 this.activeMenuIndex = null;
-             }
+            }
         });
 
         this.bindScrollListener();
@@ -364,17 +384,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
     bindScrollListener() {
         if (!this.scrollListener) {
-          this.scrollListener = () => {
-            if (window.scrollY > 0) {
-              this.containerElement.nativeElement.classList.add('layout-topbar-sticky');
-            } else {
-              this.containerElement.nativeElement.classList.remove('layout-topbar-sticky');
+            this.scrollListener = () => {
+                if (window.scrollY > 0) {
+                    this.containerElement.nativeElement.classList.add('layout-topbar-sticky');
+                } else {
+                    this.containerElement.nativeElement.classList.remove('layout-topbar-sticky');
+                }
             }
-          }
         }
-    
+
         window.addEventListener('scroll', this.scrollListener);
-      }
+    }
 
     onMenuButtonClick(event: Event) {
         this.menuButtonClick.emit();
@@ -382,7 +402,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     }
 
     changeTheme(event: Event, theme: string, dark: boolean) {
-        this.configService.updateConfig({...this.config, ...{theme, dark}});
+        this.configService.updateConfig({ ...this.config, ...{ theme, dark } });
         this.activeMenuIndex = null;
         event.preventDefault();
     }
@@ -391,7 +411,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         if (!this.outsideClickListener) {
             this.outsideClickListener = (event) => {
                 if (this.isOutsideTopbarMenuClicked(event)) {
-                    this.activeMenuIndex =  null;
+                    this.activeMenuIndex = null;
                 }
             };
 
@@ -423,14 +443,14 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     }
 
     onOverlayMenuEnter(event: AnimationEvent) {
-        switch(event.toState) {
+        switch (event.toState) {
             case 'visible':
                 this.bindOutsideClickListener();
-            break;
+                break;
 
             case 'void':
                 this.unbindOutsideClickListener();
-            break;
+                break;
         }
     }
 
