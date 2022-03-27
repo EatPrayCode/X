@@ -59,8 +59,15 @@ export class AppLayoutComponent implements OnInit {
 
   public subscription: Subscription;
 
+  activeMenuIndex: number;
 
+  toggleMenu(event: Event, index: number) {
+    this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
+    event.preventDefault();
+  }
 
+  versions: any[];
+  
   constructor(
     private store: Store<AppState>,
     private storageService: LocalStorageService,
@@ -72,7 +79,7 @@ export class AppLayoutComponent implements OnInit {
     private nodeService: NodeService,
     private customerService: CustomerService,
     private cd: ChangeDetectorRef
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.onInitFn();
