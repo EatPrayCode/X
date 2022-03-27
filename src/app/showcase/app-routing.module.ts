@@ -8,7 +8,7 @@ import { AppMainComponent } from './app.main.component';
     imports: [
         RouterModule.forRoot([
             {path: '', component: LandingComponent, pathMatch: 'full'},
-            {path: '', component: AppBlankComponent
+            {path: '', component: AppMainComponent
             , 
                 children:[
                     {path: '', redirectTo:'setup', pathMatch:'full'},

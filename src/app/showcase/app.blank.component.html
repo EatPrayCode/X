@@ -1,7 +1,8 @@
-<div class="landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
-
+<div class="layout-wrapper {{config.dark ? 'layout-wrapper-dark' : 'layout-wrapper-light'}}">
+    <app-topbar (menuButtonClick)="onMenuButtonClick()"></app-topbar>
     <app-config></app-config>
-
+    <app-menu [active]="menuActive"></app-menu>
+    
     <div class="">
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
@@ -65,10 +66,9 @@
 
     <div class="layout-mask" [ngClass]="{'layout-mask-active': menuActive}" (click)="onMaskClick()"></div>
     <div class="layout-content">
-        <div class="layout-content-inner h-full" [ngStyle]="{'min-height': clientHeight + 'px', 'margin-bottom': '-79px'}">
+        <div class="layout-content-inner h-full">
             <router-outlet></router-outlet>
         </div>
         <app-footer></app-footer>
     </div>
-
 </div>
