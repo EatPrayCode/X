@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, Output, ViewChild, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 import { trigger, style, transition, animate, AnimationEvent } from '@angular/animations';
 import { Router, NavigationEnd } from '@angular/router';
@@ -346,7 +347,7 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
 
     scrollListener: any;
 
-    constructor(private router: Router, private versionService: VersionService, private configService: AppConfigService) {}
+    constructor(private router: Router, private versionService: VersionService, private configService: AppConfigService) { }
 
     ngOnInit() {
         this.config = this.configService.config;
@@ -356,7 +357,7 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
                 this.activeMenuIndex = null;
-             }
+            }
         });
 
         this.bindScrollListener();
@@ -364,17 +365,17 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
 
     bindScrollListener() {
         if (!this.scrollListener) {
-          this.scrollListener = () => {
-            if (window.scrollY > 0) {
-              this.containerElement.nativeElement.classList.add('layout-topbar-sticky');
-            } else {
-              this.containerElement.nativeElement.classList.remove('layout-topbar-sticky');
+            this.scrollListener = () => {
+                if (window.scrollY > 0) {
+                    this.containerElement.nativeElement.classList.add('layout-topbar-sticky');
+                } else {
+                    this.containerElement.nativeElement.classList.remove('layout-topbar-sticky');
+                }
             }
-          }
         }
-    
+
         window.addEventListener('scroll', this.scrollListener);
-      }
+    }
 
     onMenuButtonClick(event: Event) {
         this.menuButtonClick.emit();
@@ -382,7 +383,7 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
     }
 
     changeTheme(event: Event, theme: string, dark: boolean) {
-        this.configService.updateConfig({...this.config, ...{theme, dark}});
+        this.configService.updateConfig({ ...this.config, ...{ theme, dark } });
         this.activeMenuIndex = null;
         event.preventDefault();
     }
@@ -391,7 +392,7 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
         if (!this.outsideClickListener) {
             this.outsideClickListener = (event) => {
                 if (this.isOutsideTopbarMenuClicked(event)) {
-                    this.activeMenuIndex =  null;
+                    this.activeMenuIndex = null;
                 }
             };
 
@@ -423,14 +424,14 @@ export class AppTopBarInnerPagesComponent implements OnInit, OnDestroy {
     }
 
     onOverlayMenuEnter(event: AnimationEvent) {
-        switch(event.toState) {
+        switch (event.toState) {
             case 'visible':
                 this.bindOutsideClickListener();
-            break;
+                break;
 
             case 'void':
                 this.unbindOutsideClickListener();
-            break;
+                break;
         }
     }
 
