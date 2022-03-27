@@ -51,6 +51,7 @@ import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
 import { AppMainComponent } from './app.main.component';
 import { CoreModule } from './core/core.module';
+import { AppTopBarInnerPagesComponent } from './app.topbar-inner-pages.component';
 
 @NgModule({
     declarations: [
@@ -63,7 +64,8 @@ import { CoreModule } from './core/core.module';
         AppFooterComponent,
         LandingComponent,
         AppMainComponent,
-        AppBlankComponent
+        AppBlankComponent,
+        AppTopBarInnerPagesComponent
     ],
     imports: [
         FormsModule,
