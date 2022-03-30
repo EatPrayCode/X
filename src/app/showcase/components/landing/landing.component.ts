@@ -87,6 +87,19 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     theme: string = 'lara-light-blue';
 
+    activeMenuIndex: number;
+
+    toggleMenu(event: Event, index: number) {
+        this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
+        event.preventDefault();
+    }
+
+    changeTheme(event: Event, theme: string, dark: boolean) {
+        this.configService.updateConfig({...this.config, ...{theme, dark}});
+        this.activeMenuIndex = null;
+        event.preventDefault();
+    }
+
     constructor(private nodeService: NodeService, private customerService: CustomerService, private configService: AppConfigService, private cd: ChangeDetectorRef) {}
 
     ngOnInit() {

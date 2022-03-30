@@ -1,3 +1,4 @@
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AppBlankComponent } from './app.blank.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -98,7 +99,8 @@ import { AppLayoutComponent } from './app.layout.component';
         InputMaskModule,
         DropdownModule,
 
-        CoreModule
+        CoreModule,
+        OverlayPanelModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

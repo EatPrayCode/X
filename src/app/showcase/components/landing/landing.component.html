@@ -1,6 +1,7 @@
 <div class="layout-wrapper landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
 
     <div class="landing-intro">
+
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
                 <a href="/">
@@ -58,13 +59,25 @@
                     (click)="toggleDarkMode()">
                     <i class="pi pi-{{config.dark ? 'sun' : 'moon'}}"></i>
                 </button>
+                <button type="button" (click)="op.toggle($event)"
+                    class="linkbox p-0 header-button flex align-items-center justify-content-center ml-2 flex-shrink-0">
+                    <i class="pi pi-discord"></i>
+                </button>
                 <button
-                    class="linkbox header-button inline-flex align-items-center justify-content-center lg:hidden ml-2 menu-button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 menu-button"
                     (click)="menuActive = !menuActive">
                     <i class="pi pi-bars"></i>
                 </button>
             </div>
         </section>
+
+        <p-overlayPanel [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" #op [dismissable]="true"
+            [showCloseIcon]="true">
+            <ng-template pTemplate>
+                Content
+            </ng-template>
+        </p-overlayPanel>
+
         <section class="landing-hero flex align-items-center flex-column justify-content-center relative"
             [ngClass]="{'hero-animation': setAnimation}">
             <div class="hero-inner z-2 relative">
