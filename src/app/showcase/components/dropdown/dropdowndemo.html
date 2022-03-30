@@ -9,7 +9,8 @@
 <div class="content-section implementation">
     <div class="card">
         <h5>Basic</h5>
-        <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown>
+        <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
+            [showClear]="true"></p-dropdown>
 
         <h5>Editable</h5>
         <p-dropdown [options]="cities" [(ngModel)]="selectedCity2" [editable]="true" optionLabel="name"></p-dropdown>
@@ -18,30 +19,35 @@
         <p-dropdown [options]="groupedCities" [(ngModel)]="selectedCity3" placeholder="Select a City" [group]="true">
             <ng-template let-group pTemplate="group">
                 <div class="flex align-items-center">
-                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + group.value" style="width: 20px"/>
+                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
+                        [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
                     <span>{{group.label}}</span>
                 </div>
             </ng-template>
         </p-dropdown>
 
         <h5>Advanced with Templating, Filtering and Clear Icon</h5>
-        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
+        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
+            filterBy="name" [showClear]="true" placeholder="Select a Country">
             <ng-template pTemplate="selectedItem">
                 <div class="country-item country-item-value" *ngIf="selectedCountry">
-                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" />
+                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
+                        [class]="'flag flag-' + selectedCountry.code.toLowerCase()" />
                     <div>{{selectedCountry.name}}</div>
                 </div>
             </ng-template>
             <ng-template let-country pTemplate="item">
                 <div class="country-item">
-                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" />
+                    <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
+                        [class]="'flag flag-' + country.code.toLowerCase()" />
                     <div>{{country.name}}</div>
                 </div>
             </ng-template>
         </p-dropdown>
 
         <h5>Virtual Scroll (10000 Items)</h5>
-        <p-dropdown [options]="items" [(ngModel)]="item" placeholder="Select Item" [virtualScroll]="true" [itemSize]="31" [filter]="false"></p-dropdown>
+        <p-dropdown [options]="items" [(ngModel)]="item" placeholder="Select Item" [virtualScroll]="true"
+            [itemSize]="31" [filter]="false"></p-dropdown>
     </div>
 </div>
 
@@ -49,179 +55,195 @@
     <p-tabView>
         <p-tabPanel header="Documentation">
             <h5>CDK</h5>
-            <p>VirtualScrolling enabled Dropdown depends on @angular/cdk's ScrollingModule so begin with installing CDK if not already installed.</p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-npm install @angular/cdk --save
-</app-code>
+            <p>VirtualScrolling enabled Dropdown depends on @angular/cdk's ScrollingModule so begin with installing CDK
+                if not already installed.</p>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                npm install @angular/cdk --save
+            </app-code>
 
             <h5>Import</h5>
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-import &#123;DropdownModule&#125; from 'primeng/dropdown';
-</app-code>
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                import &#123;DropdownModule&#125; from 'primeng/dropdown';
+            </app-code>
 
             <h5>Getting Started</h5>
             <p>Dropdown requires a value to bind and a collection of options.</p>
 
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-interface City &#123;
-    name: string,
-    code: string
-&#125;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                interface City &#123;
+                name: string,
+                code: string
+                &#125;
 
-export class DropdownDemo &#123;
+                export class DropdownDemo &#123;
 
-    cities: City[];
+                cities: City[];
 
-    selectedCity: City;
+                selectedCity: City;
 
-    constructor() &#123;
-        this.cities = [
-            &#123;name: 'New York', code: 'NY'&#125;,
-            &#123;name: 'Rome', code: 'RM'&#125;,
-            &#123;name: 'London', code: 'LDN'&#125;,
-            &#123;name: 'Istanbul', code: 'IST'&#125;,
-            &#123;name: 'Paris', code: 'PRS'&#125;
-        ];
-    &#125;
+                constructor() &#123;
+                this.cities = [
+                &#123;name: 'New York', code: 'NY'&#125;,
+                &#123;name: 'Rome', code: 'RM'&#125;,
+                &#123;name: 'London', code: 'LDN'&#125;,
+                &#123;name: 'Istanbul', code: 'IST'&#125;,
+                &#123;name: 'Paris', code: 'PRS'&#125;
+                ];
+                &#125;
 
-&#125;
-</app-code>
+                &#125;
+            </app-code>
 
-                <h5>Value Binding</h5>
-                <p>The option itself is bound to the model by default, use <i>optionValue</i> to customize the property to pass as the value.</p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cities" [(ngModel)]="selectedCityCode" optionLabel="name" optionValue="code"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <h5>Value Binding</h5>
+            <p>The option itself is bound to the model by default, use <i>optionValue</i> to customize the property to
+                pass as the value.</p>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCityCode" optionLabel="name"
+                optionValue="code"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-interface City &#123;
-    name: string,
-    code: string
-&#125;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                interface City &#123;
+                name: string,
+                code: string
+                &#125;
 
-export class DropdownDemo &#123;
+                export class DropdownDemo &#123;
 
-    cities: City[];
+                cities: City[];
 
-    selectedCityCode: string;
+                selectedCityCode: string;
 
-    constructor() &#123;
-        this.cities = [
-            &#123;name: 'New York', code: 'NY'&#125;,
-            &#123;name: 'Rome', code: 'RM'&#125;,
-            &#123;name: 'London', code: 'LDN'&#125;,
-            &#123;name: 'Istanbul', code: 'IST'&#125;,
-            &#123;name: 'Paris', code: 'PRS'&#125;
-        ];
-    &#125;
+                constructor() &#123;
+                this.cities = [
+                &#123;name: 'New York', code: 'NY'&#125;,
+                &#123;name: 'Rome', code: 'RM'&#125;,
+                &#123;name: 'London', code: 'LDN'&#125;,
+                &#123;name: 'Istanbul', code: 'IST'&#125;,
+                &#123;name: 'Paris', code: 'PRS'&#125;
+                ];
+                &#125;
 
-&#125;
-</app-code>
+                &#125;
+            </app-code>
 
-                <h5>Disabled Options</h5>
-                <p>Particular options can be prevented from selection using the <i>optionDisabled</i> property.</p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" optionDisabled="inactive"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <h5>Disabled Options</h5>
+            <p>Particular options can be prevented from selection using the <i>optionDisabled</i> property.</p>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                optionDisabled="inactive"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-interface City &#123;
-    name: string,
-    code: string
-&#125;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                interface City &#123;
+                name: string,
+                code: string
+                &#125;
 
-export class DropdownDemo &#123;
+                export class DropdownDemo &#123;
 
-    cities: City[];
+                cities: City[];
 
-    selectedCity: City;
+                selectedCity: City;
 
-    constructor() &#123;
-        this.cities = [
-            &#123;name: 'New York', code: 'NY', inactive: false&#125;,
-            &#123;name: 'Rome', code: 'RM', inactive: true&#125;,
-            &#123;name: 'London', code: 'LDN', inactive: false&#125;,
-            &#123;name: 'Istanbul', code: 'IST', inactive: true&#125;,
-            &#123;name: 'Paris', code: 'PRS', inactive: false&#125;
-        ];
-    &#125;
+                constructor() &#123;
+                this.cities = [
+                &#123;name: 'New York', code: 'NY', inactive: false&#125;,
+                &#123;name: 'Rome', code: 'RM', inactive: true&#125;,
+                &#123;name: 'London', code: 'LDN', inactive: false&#125;,
+                &#123;name: 'Istanbul', code: 'IST', inactive: true&#125;,
+                &#123;name: 'Paris', code: 'PRS', inactive: false&#125;
+                ];
+                &#125;
 
-&#125;
-</app-code>
+                &#125;
+            </app-code>
 
             <h5>Model Driven Forms</h5>
             <p>Dropdown can be used in a model driven form as well.</p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cities" formControlName="selectedCity"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cities" formControlName="selectedCity"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
             <h5>Custom Content</h5>
-            <p>Both the selected option and the options list can be templated to provide customizated representation. Use
-                <i>selectedItem</i> template to customize the selected label display and the <i>item</i> template to change the content of the options in the dropdown panel. In addition when grouping is enabled, <i>group</i> template is available
-                to customize the option groups. All templates get the option instance as the default local template variable.
+            <p>Both the selected option and the options list can be templated to provide customizated representation.
+                Use
+                <i>selectedItem</i> template to customize the selected label display and the <i>item</i> template to
+                change the content of the options in the dropdown panel. In addition when grouping is enabled,
+                <i>group</i> template is available
+                to customize the option groups. All templates get the option instance as the default local template
+                variable.
             </p>
 
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true" placeholder="Select a Country"&gt;
-    &lt;ng-template pTemplate="selectedItem"&gt;
-        &lt;div class="country-item country-item-value"  *ngIf="selectedCountry"&gt;
-            &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" /&gt;
-            &lt;div&gt;&#123;&#123;selectedCountry.name&#125;&#125;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/ng-template&gt;
-    &lt;ng-template let-country pTemplate="item"&gt;
-        &lt;div class="country-item"&gt;
-            &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" /&gt;
-            &lt;div&gt;&#123;&#123;country.name&#125;&#125;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/ng-template&gt;
-&lt;/p-dropdown&gt;
-</app-code>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true"
+                placeholder="Select a Country"&gt;
+                &lt;ng-template pTemplate="selectedItem"&gt;
+                &lt;div class="country-item country-item-value" *ngIf="selectedCountry"&gt;
+                &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' +
+                selectedCountry.code.toLowerCase()" /&gt;
+                &lt;div&gt;&#123;&#123;selectedCountry.name&#125;&#125;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/ng-template&gt;
+                &lt;ng-template let-country pTemplate="item"&gt;
+                &lt;div class="country-item"&gt;
+                &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' +
+                country.code.toLowerCase()" /&gt;
+                &lt;div&gt;&#123;&#123;country.name&#125;&#125;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/ng-template&gt;
+                &lt;/p-dropdown&gt;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-interface City &#123;
-    name: string,
-    code: string
-&#125;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                interface City &#123;
+                name: string,
+                code: string
+                &#125;
 
-export class DropdownDemo &#123;
+                export class DropdownDemo &#123;
 
-    selectedCountry: Country;
+                selectedCountry: Country;
 
-    constructor() &#123;
-        this.countries = [
-            &#123;name: 'Australia', code: 'AU'&#125;,
-            &#123;name: 'Brazil', code: 'BR'&#125;,
-            &#123;name: 'China', code: 'CN'&#125;,
-            &#123;name: 'Egypt', code: 'EG'&#125;,
-            &#123;name: 'France', code: 'FR'&#125;,
-            &#123;name: 'Germany', code: 'DE'&#125;,
-            &#123;name: 'India', code: 'IN'&#125;,
-            &#123;name: 'Japan', code: 'JP'&#125;,
-            &#123;name: 'Spain', code: 'ES'&#125;,
-            &#123;name: 'United States', code: 'US'&#125;
-        ];
-    &#125;
-&#125;
-</app-code>
+                constructor() &#123;
+                this.countries = [
+                &#123;name: 'Australia', code: 'AU'&#125;,
+                &#123;name: 'Brazil', code: 'BR'&#125;,
+                &#123;name: 'China', code: 'CN'&#125;,
+                &#123;name: 'Egypt', code: 'EG'&#125;,
+                &#123;name: 'France', code: 'FR'&#125;,
+                &#123;name: 'Germany', code: 'DE'&#125;,
+                &#123;name: 'India', code: 'IN'&#125;,
+                &#123;name: 'Japan', code: 'JP'&#125;,
+                &#123;name: 'Spain', code: 'ES'&#125;,
+                &#123;name: 'United States', code: 'US'&#125;
+                ];
+                &#125;
+                &#125;
+            </app-code>
 
             <h5>Virtual Scrolling</h5>
-            <p>VirtualScrolling is an efficient way of rendering the options by displaying a small subset of data in the viewport at any time. When dealing with huge number of options, it is suggested to enable VirtualScrolling
-                to avoid performance issues. Usage is simple as setting virtualScroll property to true and defining itemSize to specify the height of an item. </p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cities" [virtualScroll]="true" itemSize="30"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <p>VirtualScrolling is an efficient way of rendering the options by displaying a small subset of data in the
+                viewport at any time. When dealing with huge number of options, it is suggested to enable
+                VirtualScrolling
+                to avoid performance issues. Usage is simple as setting virtualScroll property to true and defining
+                itemSize to specify the height of an item. </p>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cities" [virtualScroll]="true" itemSize="30"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
             <h5>Animation Configuration</h5>
-            <p>Transition of the open and hide animations can be customized using the showTransitionOptions and hideTransitionOptions properties,
+            <p>Transition of the open and hide animations can be customized using the showTransitionOptions and
+                hideTransitionOptions properties,
                 example below disables the animations altogether.</p>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;p-dropdown [options]="cars" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"&gt;&lt;/p-dropdown&gt;
-</app-code>
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;p-dropdown [options]="cars" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'"
+                [hideTransitionOptions]="'0ms'"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
             <h5>Properties</h5>
             <div class="doc-tablewrapper">
@@ -281,7 +303,8 @@ export class DropdownDemo &#123;
                             <td>scrollHeight</td>
                             <td>string</td>
                             <td>200px</td>
-                            <td>Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.</td>
+                            <td>Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this
+                                value.</td>
                         </tr>
                         <tr>
                             <td>style</td>
@@ -323,13 +346,15 @@ export class DropdownDemo &#123;
                             <td>filterBy</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.</td>
+                            <td>When filtering is enabled, filterBy decides which field or fields (comma separated) to
+                                search against.</td>
                         </tr>
                         <tr>
                             <td>filterMatchMode</td>
                             <td>string</td>
                             <td>contains</td>
-                            <td>Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".</td>
+                            <td>Defines how the items are filtered, valid values are "contains" (default) "startsWith",
+                                "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".</td>
                         </tr>
                         <tr>
                             <td>filterPlaceholder</td>
@@ -341,13 +366,15 @@ export class DropdownDemo &#123;
                             <td>filterLocale</td>
                             <td>string</td>
                             <td>undefined</td>
-                            <td>Locale to use in filtering. The default locale is the host environment's current locale.</td>
+                            <td>Locale to use in filtering. The default locale is the host environment's current locale.
+                            </td>
                         </tr>
                         <tr>
                             <td>required</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that an input field must be filled out before submitting the form.</td>
+                            <td>When present, it specifies that an input field must be filled out before submitting the
+                                form.</td>
                         </tr>
                         <tr>
                             <td>disabled</td>
@@ -365,25 +392,29 @@ export class DropdownDemo &#123;
                             <td>emptyMessage</td>
                             <td>string</td>
                             <td>No records found.</td>
-                            <td>Text to display when there is no data. Defaults to global value in i18n translation configuration.</td>
+                            <td>Text to display when there is no data. Defaults to global value in i18n translation
+                                configuration.</td>
                         </tr>
                         <tr>
                             <td>emptyFilterMessage</td>
                             <td>string</td>
                             <td>No results found</td>
-                            <td>Text to display when filtering does not return any results. Defaults to global value in i18n translation configuration.</td>
+                            <td>Text to display when filtering does not return any results. Defaults to global value in
+                                i18n translation configuration.</td>
                         </tr>
                         <tr>
                             <td>ariaLabelledBy</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Establishes relationships between the component and label(s) where its value should be one or more element IDs.</td>
+                            <td>Establishes relationships between the component and label(s) where its value should be
+                                one or more element IDs.</td>
                         </tr>
                         <tr>
                             <td>editable</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, custom value instead of predefined options can be entered using the editable input field.</td>
+                            <td>When present, custom value instead of predefined options can be entered using the
+                                editable input field.</td>
                         </tr>
                         <tr>
                             <td>maxlength</td>
@@ -395,7 +426,9 @@ export class DropdownDemo &#123;
                             <td>appendTo</td>
                             <td>any</td>
                             <td>null</td>
-                            <td>Target element to attach the overlay, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).</td>
+                            <td>Target element to attach the overlay, valid values are "body" or a local ng-template
+                                variable of another element (note: use binding with brackets for template variables,
+                                e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).</td>
                         </tr>
                         <tr>
                             <td>tabindex</td>
@@ -425,7 +458,8 @@ export class DropdownDemo &#123;
                             <td>autofocus</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that the component should automatically get focus on load.</td>
+                            <td>When present, it specifies that the component should automatically get focus on load.
+                            </td>
                         </tr>
                         <tr>
                             <td>autofocusFilter</td>
@@ -455,7 +489,8 @@ export class DropdownDemo &#123;
                             <td>autoDisplayFirst</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Whether to display the first item as the label if no placeholder is defined and value is null.</td>
+                            <td>Whether to display the first item as the label if no placeholder is defined and value is
+                                null.</td>
                         </tr>
                         <tr>
                             <td>group</td>
@@ -537,11 +572,11 @@ export class DropdownDemo &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -669,7 +704,8 @@ export class DropdownDemo &#123;
             </div>
 
             <h5>Styling</h5>
-            <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
+            <p>Following is the list of structural style classes, for theming classes visit <a href="#"
+                    [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
@@ -732,161 +768,172 @@ export class DropdownDemo &#123;
         </p-tabPanel>
 
         <p-tabPanel header="Source">
-            <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/dropdown" class="btn-viewsource" target="_blank">
+            <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/dropdown"
+                class="btn-viewsource" target="_blank">
                 <span>View on GitHub</span>
             </a>
-            <a href="https://stackblitz.com/edit/primeng-dropdown-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
+            <a href="https://stackblitz.com/edit/primeng-dropdown-demo" class="btn-viewsource"
+                style="margin-left: .5em;" target="_blank">
                 <span>Edit in StackBlitz</span>
             </a>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;h5&gt;Single&lt;/h5&gt;
-&lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name" [showClear]="true"&gt;&lt;/p-dropdown&gt;
+            <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+                &lt;h5&gt;Single&lt;/h5&gt;
+                &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City"
+                optionLabel="name" [showClear]="true"&gt;&lt;/p-dropdown&gt;
 
-&lt;h5&gt;Editable&lt;/h5&gt;
-&lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity2" [editable]="true" optionLabel="name"&gt;&lt;/p-dropdown&gt;
+                &lt;h5&gt;Editable&lt;/h5&gt;
+                &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity2" [editable]="true"
+                optionLabel="name"&gt;&lt;/p-dropdown&gt;
 
-&lt;h5&gt;Group&lt;/h5&gt;
-&lt;p-dropdown [options]="groupedCities" [(ngModel)]="selectedCity3" placeholder="Select a City" [group]="true"&gt;
-    &lt;ng-template let-group pTemplate="group"&gt;
-        &lt;div class="flex align-items-center"&gt;
-            &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + group.value" style="width: 20px"/&gt;
-            &lt;span&gt;&#123;&#123;group.label&#125;&#125;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/ng-template&gt;
-&lt;/p-dropdown&gt;
+                &lt;h5&gt;Group&lt;/h5&gt;
+                &lt;p-dropdown [options]="groupedCities" [(ngModel)]="selectedCity3" placeholder="Select a City"
+                [group]="true"&gt;
+                &lt;ng-template let-group pTemplate="group"&gt;
+                &lt;div class="flex align-items-center"&gt;
+                &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' +
+                group.value" style="width: 20px"/&gt;
+                &lt;span&gt;&#123;&#123;group.label&#125;&#125;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;/ng-template&gt;
+                &lt;/p-dropdown&gt;
 
-&lt;h5&gt;Content with Filters&lt;/h5&gt;
-&lt;p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country"&gt;
-    &lt;ng-template pTemplate="selectedItem"&gt;
-        &lt;div class="country-item country-item-value"  *ngIf="selectedCountry"&gt;
-            &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" /&gt;
-            &lt;div&gt;&#123;&#123;selectedCountry.name&#125;&#125;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/ng-template&gt;
-    &lt;ng-template let-country pTemplate="item"&gt;
-        &lt;div class="country-item"&gt;
-            &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" /&gt;
-            &lt;div&gt;&#123;&#123;country.name&#125;&#125;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/ng-template&gt;
-&lt;/p-dropdown&gt;
+                &lt;h5&gt;Content with Filters&lt;/h5&gt;
+                &lt;p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
+                filterBy="name" [showClear]="true" placeholder="Select a Country"&gt;
+                &lt;ng-template pTemplate="selectedItem"&gt;
+                &lt;div class="country-item country-item-value" *ngIf="selectedCountry"&gt;
+                &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' +
+                selectedCountry.code.toLowerCase()" /&gt;
+                &lt;div&gt;&#123;&#123;selectedCountry.name&#125;&#125;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/ng-template&gt;
+                &lt;ng-template let-country pTemplate="item"&gt;
+                &lt;div class="country-item"&gt;
+                &lt;img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' +
+                country.code.toLowerCase()" /&gt;
+                &lt;div&gt;&#123;&#123;country.name&#125;&#125;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/ng-template&gt;
+                &lt;/p-dropdown&gt;
 
-&lt;h5&gt;Virtual Scroll (10000 Items)&lt;/h5&gt;
-&lt;p-dropdown [options]="items" [(ngModel)]="item" placeholder="Select Item" [virtualScroll]="true" [itemSize]="31" [filter]="false"&gt;&lt;/p-dropdown&gt;
-</app-code>
+                &lt;h5&gt;Virtual Scroll (10000 Items)&lt;/h5&gt;
+                &lt;p-dropdown [options]="items" [(ngModel)]="item" placeholder="Select Item" [virtualScroll]="true"
+                [itemSize]="31" [filter]="false"&gt;&lt;/p-dropdown&gt;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-export class DropdownDemo &#123;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                export class DropdownDemo &#123;
 
-    cities: City[];
+                cities: City[];
 
-    selectedCity1: City;
+                selectedCity1: City;
 
-    selectedCity2: City;
+                selectedCity2: City;
 
-    selectedCity3: string;
+                selectedCity3: string;
 
-    selectedCountry: string;
+                selectedCountry: string;
 
-    countries: any[];
+                countries: any[];
 
-    groupedCities: SelectItemGroup[];
+                groupedCities: SelectItemGroup[];
 
-    items: SelectItem[];
+                items: SelectItem[];
 
-    item: string;
+                item: string;
 
-    constructor() &#123;
-        this.items = [];
-        for (let i = 0; i &lt; 10000; i++) &#123;
-            this.items.push(&#123;label: 'Item ' + i, value: 'Item ' + i&#125;);
-        &#125;
+                constructor() &#123;
+                this.items = [];
+                for (let i = 0; i &lt; 10000; i++) &#123;
+                this.items.push(&#123;label: 'Item ' + i, value: 'Item ' + i&#125;);
+                &#125;
 
-        this.cities = [
-            &#123;name: 'New York', code: 'NY'&#125;,
-            &#123;name: 'Rome', code: 'RM'&#125;,
-            &#123;name: 'London', code: 'LDN'&#125;,
-            &#123;name: 'Istanbul', code: 'IST'&#125;,
-            &#123;name: 'Paris', code: 'PRS'&#125;
-        ];
+                this.cities = [
+                &#123;name: 'New York', code: 'NY'&#125;,
+                &#123;name: 'Rome', code: 'RM'&#125;,
+                &#123;name: 'London', code: 'LDN'&#125;,
+                &#123;name: 'Istanbul', code: 'IST'&#125;,
+                &#123;name: 'Paris', code: 'PRS'&#125;
+                ];
 
-        this.groupedCities = [
-            &#123;
+                this.groupedCities = [
+                &#123;
                 label: 'Germany', value: 'de',
                 items: [
-                    &#123;label: 'Berlin', value: 'Berlin'&#125;,
-                    &#123;label: 'Frankfurt', value: 'Frankfurt'&#125;,
-                    &#123;label: 'Hamburg', value: 'Hamburg'&#125;,
-                    &#123;label: 'Munich', value: 'Munich'&#125;
+                &#123;label: 'Berlin', value: 'Berlin'&#125;,
+                &#123;label: 'Frankfurt', value: 'Frankfurt'&#125;,
+                &#123;label: 'Hamburg', value: 'Hamburg'&#125;,
+                &#123;label: 'Munich', value: 'Munich'&#125;
                 ]
-            &#125;,
-            &#123;
+                &#125;,
+                &#123;
                 label: 'USA', value: 'us',
                 items: [
-                    &#123;label: 'Chicago', value: 'Chicago'&#125;,
-                    &#123;label: 'Los Angeles', value: 'Los Angeles'&#125;,
-                    &#123;label: 'New York', value: 'New York'&#125;,
-                    &#123;label: 'San Francisco', value: 'San Francisco'&#125;
+                &#123;label: 'Chicago', value: 'Chicago'&#125;,
+                &#123;label: 'Los Angeles', value: 'Los Angeles'&#125;,
+                &#123;label: 'New York', value: 'New York'&#125;,
+                &#123;label: 'San Francisco', value: 'San Francisco'&#125;
                 ]
-            &#125;,
-            &#123;
+                &#125;,
+                &#123;
                 label: 'Japan', value: 'jp',
                 items: [
-                    &#123;label: 'Kyoto', value: 'Kyoto'&#125;,
-                    &#123;label: 'Osaka', value: 'Osaka'&#125;,
-                    &#123;label: 'Tokyo', value: 'Tokyo'&#125;,
-                    &#123;label: 'Yokohama', value: 'Yokohama'&#125;
+                &#123;label: 'Kyoto', value: 'Kyoto'&#125;,
+                &#123;label: 'Osaka', value: 'Osaka'&#125;,
+                &#123;label: 'Tokyo', value: 'Tokyo'&#125;,
+                &#123;label: 'Yokohama', value: 'Yokohama'&#125;
                 ]
-            &#125;
-        ];
+                &#125;
+                ];
 
-        this.countries = [
-            &#123;name: 'Australia', code: 'AU'&#125;,
-            &#123;name: 'Brazil', code: 'BR'&#125;,
-            &#123;name: 'China', code: 'CN'&#125;,
-            &#123;name: 'Egypt', code: 'EG'&#125;,
-            &#123;name: 'France', code: 'FR'&#125;,
-            &#123;name: 'Germany', code: 'DE'&#125;,
-            &#123;name: 'India', code: 'IN'&#125;,
-            &#123;name: 'Japan', code: 'JP'&#125;,
-            &#123;name: 'Spain', code: 'ES'&#125;,
-            &#123;name: 'United States', code: 'US'&#125;
-        ];
-    &#125;
-&#125;
-</app-code>
+                this.countries = [
+                &#123;name: 'Australia', code: 'AU'&#125;,
+                &#123;name: 'Brazil', code: 'BR'&#125;,
+                &#123;name: 'China', code: 'CN'&#125;,
+                &#123;name: 'Egypt', code: 'EG'&#125;,
+                &#123;name: 'France', code: 'FR'&#125;,
+                &#123;name: 'Germany', code: 'DE'&#125;,
+                &#123;name: 'India', code: 'IN'&#125;,
+                &#123;name: 'Japan', code: 'JP'&#125;,
+                &#123;name: 'Spain', code: 'ES'&#125;,
+                &#123;name: 'United States', code: 'US'&#125;
+                ];
+                &#125;
+                &#125;
+            </app-code>
 
-<app-code lang="css" ngNonBindable ngPreserveWhitespaces>
-:host ::ng-deep .p-dropdown &#123;
-    width: 14rem;
-&#125;
+            <app-code lang="css" ngNonBindable ngPreserveWhitespaces>
+                :host ::ng-deep .p-dropdown &#123;
+                width: 14rem;
+                &#125;
 
-.country-item-value &#123;
-    img.flag &#123;
-        width: 17px;
-    &#125;
-&#125;
-</app-code>
+                .country-item-value &#123;
+                img.flag &#123;
+                width: 17px;
+                &#125;
+                &#125;
+            </app-code>
 
-<app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-@Injectable()
-export class CountryService &#123;
+            <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
+                @Injectable()
+                export class CountryService &#123;
 
-    constructor(private http: Http) &#123;&#125;
+                constructor(private http: Http) &#123;&#125;
 
-    getCountries() &#123;
-        return this.http.get('showcase/resources/data/countries.json')
-                    .toPromise()
-                    .then(res => &lt;any[]&gt; res.json().data)
-                    .then(data => &#123; return data; &#125;);
-    &#125;
-&#125;
-</app-code>
+                getCountries() &#123;
+                return this.http.get('showcase/resources/data/countries.json')
+                .toPromise()
+                .then(res => &lt;any[]&gt; res.json().data)
+                .then(data => &#123; return data; &#125;);
+                &#125;
+                &#125;
+            </app-code>
         </p-tabPanel>
 
         <p-tabPanel header="StackBlitz">
             <ng-template pTemplate="content">
-                <iframe src="https://stackblitz.com/edit/primeng-dropdown-demo?embed=1" style="width: 100%; height: 768px; border: none;"></iframe>
+                <iframe src="https://stackblitz.com/edit/primeng-dropdown-demo?embed=1"
+                    style="width: 100%; height: 768px; border: none;"></iframe>
             </ng-template>
         </p-tabPanel>
     </p-tabView>
