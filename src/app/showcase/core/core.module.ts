@@ -1,3 +1,4 @@
+import { FirebaseModule } from './auth/firebase.module';
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import {
@@ -21,7 +22,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { environment } from '../../../environments/environment';
@@ -67,7 +68,6 @@ import { MatButtonModule } from '@angular/material/button';
 //   faInstagram,
 //   faYoutube
 // } from '@fortawesome/free-brands-svg-icons';
-import { CoreAuthModule } from './core.auth.module';
 
 export {
   TitleService,
@@ -113,7 +113,7 @@ export function httpLoaderFactory(http: HttpClient) {
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([SettingsEffects, GoogleAnalyticsEffects]),
-    CoreAuthModule,
+    FirebaseModule,
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
@@ -138,6 +138,7 @@ export function httpLoaderFactory(http: HttpClient) {
   exports: [
     // angular
     FormsModule,
+    ReactiveFormsModule,
 
     // material
     MatSidenavModule,
@@ -152,7 +153,7 @@ export function httpLoaderFactory(http: HttpClient) {
 
     // 3rd party
     TranslateModule,
-    CoreAuthModule
+    FirebaseModule
   ]
 })
 export class CoreModule {

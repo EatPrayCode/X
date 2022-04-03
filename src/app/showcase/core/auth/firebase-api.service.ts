@@ -4,8 +4,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 import { HttpClient } from '@angular/common/http';
-import { appSettingsStateDefault } from './auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
-import { appSettingsState } from '../mocks/appStateDefault';
+import { appSettingsState } from '../../mocks/appStateDefault';
+import { appSettingsStateDefault } from './components/choose-app-settings-modal/choose-app-settings-modal.component';
+// import { appSettingsStateDefault } from './auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
+// import { appSettingsState } from '../mocks/appStateDefault';
 
 @Injectable({
   providedIn: 'root'

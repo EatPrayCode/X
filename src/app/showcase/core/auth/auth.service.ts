@@ -1,10 +1,10 @@
 import { take } from 'rxjs/operators';
-import { FirebaseApiService } from '../firebase-api.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import firebase from "firebase/app"
 import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
 import { StateService } from '../../services/state.service';
+import { FirebaseApiService } from './firebase-api.service';
 
 @Injectable({
   providedIn: 'root'

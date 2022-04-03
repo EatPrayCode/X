@@ -2,7 +2,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { AppConfigService } from './../service/appconfigservice';
 import { AppConfig } from './../domain/appconfig';
 import { Subscription } from 'rxjs';
-import { PrimeNGConfig, MenuItem, SelectItem, TreeNode, MessageService } from 'primeng/api';
+import { PrimeNGConfig, MenuItem, SelectItem, TreeNode, MessageService, SelectItemGroup } from 'primeng/api';
 
 import { MatDialog } from '@angular/material/dialog';
 import browser from 'browser-detect';
@@ -29,7 +29,7 @@ import {
 import { ChooseAppSettingsModalComponent } from './../core/auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
 import { SigninComponent } from './../core/auth/components/signin/signin.component';
 import { StateService } from './../services/state.service';
-import { Customer, Representative } from './../domain/customer';
+import { Country, Customer, Representative } from './../domain/customer';
 import { CustomerService } from './../service/customerservice';
 import { NodeService } from './../service/nodeservice';
 
@@ -100,7 +100,8 @@ export class AppLayoutComponent implements OnInit {
     private nodeService: NodeService,
     private customerService: CustomerService,
     private cd: ChangeDetectorRef,
-    public dialogService: DialogService, public messageService: MessageService
+    public dialogService: DialogService,
+    public messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -158,7 +159,7 @@ export class AppLayoutComponent implements OnInit {
   hideNews() {
     this.newsActive = false;
     const now = new Date();
-    const item = {
+    const item: any = {
       value: false,
       expiry: now.getTime() + 604800000,
     }
@@ -381,7 +382,13 @@ export class AppLayoutComponent implements OnInit {
 
   selectedCity: City;
 
+  groupedCities: SelectItemGroup[];
+    
   cities: City[];
+
+  countries: Country[];
+
+  selectedCountries: Country[];
 
   price: number;
 
@@ -505,11 +512,56 @@ export class AppLayoutComponent implements OnInit {
     ];
 
     this.cities = [
-      { name: "New York", code: "NY" },
-      { name: "Rome", code: "RM" },
-      { name: "London", code: "LDN" },
-      { name: "Paris", code: "PRS" },
-    ];
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
+
+  this.countries = [
+      {name: 'Australia', code: 'AU'},
+      {name: 'Brazil', code: 'BR'},
+      {name: 'China', code: 'CN'},
+      {name: 'Egypt', code: 'EG'},
+      {name: 'France', code: 'FR'},
+      {name: 'Germany', code: 'DE'},
+      {name: 'India', code: 'IN'},
+      {name: 'Japan', code: 'JP'},
+      {name: 'Spain', code: 'ES'},
+      {name: 'United States', code: 'US'}
+  ];
+
+  this.groupedCities = [
+      {
+          label: 'Germany', value: 'de', 
+          items: [
+              {label: 'Berlin', value: 'Berlin'},
+              {label: 'Frankfurt', value: 'Frankfurt'},
+              {label: 'Hamburg', value: 'Hamburg'},
+              {label: 'Munich', value: 'Munich'}
+          ]
+      },
+      {
+          label: 'USA', value: 'us', 
+          items: [
+              {label: 'Chicago', value: 'Chicago'},
+              {label: 'Los Angeles', value: 'Los Angeles'},
+              {label: 'New York', value: 'New York'},
+              {label: 'San Francisco', value: 'San Francisco'}
+          ]
+      },
+      {
+          label: 'Japan', value: 'jp', 
+          items: [
+              {label: 'Kyoto', value: 'Kyoto'},
+              {label: 'Osaka', value: 'Osaka'},
+              {label: 'Tokyo', value: 'Tokyo'},
+              {label: 'Yokohama', value: 'Yokohama'}
+          ]
+      }
+  ];
+
 
     this.bindScrollListener();
   }

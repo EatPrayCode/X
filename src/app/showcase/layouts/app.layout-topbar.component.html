@@ -1,0 +1,12 @@
+<div class="layout-topbar" #containerElement>
+    <ul #topbarMenu class="topbar-menu">
+        <li class="topbar-submenu">
+            <a tabindex="0" (click)="toggleMenu($event, 3)">Language-Selected</a>
+            <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 3" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)" style="width: 100%; min-width: 125px;">
+                <li *ngFor="let v of versions">
+                    <a [href]="v.url">{{v.version}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

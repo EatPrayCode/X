@@ -100,7 +100,6 @@ export class ChooseAppSettingsModalComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private dataService: DataService,
-    private ref: MatDialogRef<ChooseAppSettingsModalComponent>,
     public appService: AppService,
     public stateService: StateService
   ) { }
@@ -159,13 +158,13 @@ export class ChooseAppSettingsModalComponent implements OnInit {
     this.stateService.saveUserSettingsToFirebase(appSettingsObj).subscribe(res => {
 
     });
-    this.ref.close(appSettingsObj);
+    // this.ref.close(appSettingsObj);
   }
 
   unSelectedSettings() {
     this.stateService.appSettingsSubject.next(appSettingsStateDefault);
     this.stateService.saveToLocalStorage(appSettingsStateDefault);
-    this.ref.close(appSettingsStateDefault);
+    // this.ref.close(appSettingsStateDefault);
   }
 
   continue() {

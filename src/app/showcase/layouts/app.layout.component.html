@@ -1,6 +1,7 @@
 <div class="layout-wrapper landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
 
     <div class="">
+        <!-- <app-layout-topbar></app-layout-topbar> -->
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
                 <a href="/">
@@ -14,42 +15,70 @@
                     <ol
                         class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
                         <li class="mr-0 lg:mr-2">
+                            <a href="https://www.primefaces.org/store/templates.xhtml">
+                                <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2">
                             <a [routerLink]="['home-all']">
                                 <img src="assets/showcase/images/landing/core-icon.svg" alt="Primeng core">
-                                <span>Components</span>
+                                <span>Netas</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
                             <a href="https://www.primefaces.org/primeblocks-ng">
                                 <img src="assets/showcase/images/landing/blocks-icon.svg" alt="Primeng blocks">
-                                <span>Blocks</span>
+                                <span>Admin</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
                             <a href="https://www.primefaces.org/designer-ng">
                                 <img src="assets/showcase/images/landing/designer-icon.svg" alt="Primeng designer">
-                                <span>Designer</span>
+                                <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
                             <a href="https://www.primefaces.org/store/templates.xhtml">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
-                                <span>Templates</span>
+                                <span>Settings</span>
                             </a>
                         </li>
+
+                        <p-overlayPanel #op>
+                            <ng-template pTemplate>
+
+                                <h5>Advanced with Group, Filtering and Multiple Selection</h5>
+                                <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
+                                    [metaKeySelection]="false" [checkbox]="true" [filter]="true" [multiple]="true"
+                                    [listStyle]="{'max-height':'250px'}" [style]="{'width':'15rem'}">
+                                    <ng-template let-group pTemplate="group">
+                                        <div class="flex align-items-center">
+                                            <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
+                                                [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                                            <span>{{group.label}}</span>
+                                        </div>
+                                    </ng-template>
+                                </p-listbox>
+
+
+                            </ng-template>
+                        </p-overlayPanel>
+
                         <li class="mr-0 lg:mr-2">
-                            <a href="https://www.primefaces.org/store/templates.xhtml">
+                            <a (click)="op.toggle($event)">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
-                                <span>Others</span>
+                                <span>Bhojpuri</span>
                             </a>
                         </li>
+
                     </ol>
                 </nav>
                 <a (click)="show()" rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
                 </a>
-                <a href="https://discord.gg/gzKFYnpmCY" rel="noopener noreferrer"
+                <a (click)="op.toggle($event)" rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-discord"></i>
                 </a>
@@ -60,7 +89,7 @@
                     <i class="pi pi-{{config.dark ? 'sun' : 'moon'}}"></i>
                 </button>
                 <button
-                    class="linkbox header-button inline-flex align-items-center justify-content-center lg:hidden ml-2 menu-button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 menu-button"
                     (click)="menuActive = !menuActive">
                     <i class="pi pi-bars"></i>
                 </button>
@@ -76,12 +105,12 @@
         <nav class="mobile-bottom-nav">
             <!-- mobile-bottom-nav__item--active -->
             <div class="mobile-bottom-nav__item " [routerLink]="'home-all'">
-                <div class="mobile-bottom-nav__item-content" >
+                <div class="mobile-bottom-nav__item-content">
                     <i class="material-icons">home</i>
                     Home
                 </div>
             </div>
-            
+
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content" [routerLink]="'netas'">
                     <i class="material-icons">mail</i>

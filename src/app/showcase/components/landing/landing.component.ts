@@ -6,6 +6,8 @@ import { Table } from "primeng/table";
 import { AppConfigService } from "../../service/appconfigservice";
 import { AppConfig } from "../../domain/appconfig";
 import { Customer, Representative } from "../../domain/customer";
+import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
+import { SigninComponent } from "../../core/auth/components/signin/signin.component";
 interface City {
     name: string;
     code: string;
@@ -101,7 +103,13 @@ export class LandingComponent implements OnInit, OnDestroy {
         event.preventDefault();
     }
 
-    constructor(private nodeService: NodeService, private customerService: CustomerService, private configService: AppConfigService, private cd: ChangeDetectorRef) {}
+    constructor(
+        private nodeService: NodeService, 
+        private customerService: CustomerService, 
+        private configService: AppConfigService, 
+        private cd: ChangeDetectorRef,
+        public dialogService: DialogService
+        ) {}
 
     ngOnInit() {
         this.config = this.configService.config;
@@ -221,6 +229,22 @@ export class LandingComponent implements OnInit, OnDestroy {
 
         this.bindScrollListener();
     }
+
+    ref: DynamicDialogRef;
+
+    show() {
+        console.log("Helo")
+        // this.ref = this.dialogService.open(SigninComponent, {
+        //   header: 'Choose a Product',
+        //   width: '70%',
+        //   contentStyle: { "max-height": "500px", "overflow": "auto" },
+        //   baseZIndex: 10000
+        // });
+    
+        // this.ref.onClose.subscribe((product: any) => {
+        //   console.log("hello result", product);
+        // });
+      }
 
     ngAfterViewInit() {
         this.setAnimation = true;

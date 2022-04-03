@@ -1,27 +1,16 @@
-<h2 mat-dialog-title>Choose Netas</h2>
+<div class="container" rtl>
 
-<mat-dialog-content class="mat-typography">
+    <div class="contributors">
 
-    <div class="container" rtl>
+        <div class="contributors-wrapper">
 
-        <div class="contributors">
+            <!-- ALL-CONTRIBUTORS-LIST:START -->
+            <a *ngFor="let neta of netasList" class="contributor" target="_blank">
+                <img alt src="https://avatars0.githubusercontent.com/u/3764868?v=4">
+                <span>NetaName</span>
+            </a>
+            <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-            <div class="contributors-wrapper">
-
-                <!-- ALL-CONTRIBUTORS-LIST:START -->
-                <a *ngFor="let neta of netasList" class="contributor" target="_blank">
-                    <img alt src="https://avatars0.githubusercontent.com/u/3764868?v=4">
-                    <span>NetaName</span>
-                </a>
-                <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-            </div>
         </div>
     </div>
-
-</mat-dialog-content>
-
-<mat-dialog-actions align="end">
-    <button mat-button mat-raised-button color="primary" cdkFocusInitial (click)="selectedSettings('Bangalore')">Prefilled Template</button>
-    <button mat-button mat-raised-button color="primary" cdkFocusInitial (click)="unSelectedSettings()">DEFAULT</button>
-</mat-dialog-actions>
+</div>

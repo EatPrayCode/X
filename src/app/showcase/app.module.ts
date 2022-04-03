@@ -48,14 +48,16 @@ import { AppLayoutComponent } from './layouts/app.layout.component';
 import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
 import { AppDemoActionsModule } from './shared/app.demoactions.component';
+import { AppLayoutTopBarComponent } from './layouts/app.layout-topbar.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AppTopBarComponent,
         AppFooterComponent,
+        AppLayoutTopBarComponent,
+        AppLayoutComponent,
         LandingComponent,
-        AppLayoutComponent
     ],
     imports: [
         FormsModule,

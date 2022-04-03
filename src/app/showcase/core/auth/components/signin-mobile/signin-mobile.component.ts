@@ -11,7 +11,7 @@ import { WindowService } from '../../window.service';
   styleUrls: ['./signin-mobile.component.scss']
 })
 export class SigninMobileComponent implements OnInit, AfterViewInit {
-  phoneNumber: string = '';
+  phoneNumber: any = '';
   otp: string = '';
   windowRef: any;
   disableotpsendbtn = true;
