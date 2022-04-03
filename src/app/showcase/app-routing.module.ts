@@ -13,6 +13,18 @@ import { AppLayoutComponent } from './app.layout.component';
                     // { path: '', redirectTo: 'setup', pathMatch: 'full' },
                     { path: 'netas', loadChildren: () => import('./components/politicians/avatardemo.module').then(m => m.AvatarDemoModule) },
                     {
+                        path: 'dashboard',
+                        loadChildren: () =>
+                            import('./components/dashboard/setup.module').then((m) => m.SetupModule),
+                        // resolve: {
+                        //   profile: AppResolver
+                        // },
+                        // resolve: {
+                        //   profile: AppProtectedResolver
+                        // }
+                        // canActivate: [MarketingGuardService]
+                    },
+                    {
                         path: 'admin-dashboard',
                         loadChildren: () =>
                             import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
