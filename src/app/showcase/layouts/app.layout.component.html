@@ -4,7 +4,7 @@
 
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
-                <a href="/">
+                <a href="">
                     <img src="assets/showcase/images/primeng-logo-{{config.dark ? 'light' : 'dark'}}.svg" alt="PrimeNG"
                         class="landing-header-logo">
                 </a>
@@ -58,8 +58,8 @@
 
                                 <h5>Advanced with Group, Filtering and Multiple Selection</h5>
                                 <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
-                                    [metaKeySelection]="false" [filter]="true"
-                                    [listStyle]="{'max-height':'250px'}" [style]="{}">
+                                    [metaKeySelection]="false" [filter]="true" [listStyle]="{'max-height':'250px'}"
+                                    [style]="{}">
                                     <ng-template let-group pTemplate="group">
                                         <div class="flex align-items-center">
                                             <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
@@ -87,7 +87,11 @@
                     Bhojpuri
                 </a>
 
-                <a (click)="show()" rel="noopener noreferrer"
+                <a *ngIf="(stateService.appSettingsSubject | async)?.uid" (click)="userop.toggle($event)" class="mr-2">
+                    User
+                </a>
+
+                <a *ngIf="!(stateService.appSettingsSubject | async)?.uid" (click)="show()" rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
                 </a>
@@ -97,6 +101,7 @@
                     (click)="toggleDarkMode()">
                     <i class="pi pi-{{config.dark ? 'sun' : 'moon'}}"></i>
                 </button>
+
                 <button
                     class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 menu-button"
                     (click)="menuActive = !menuActive">
@@ -105,10 +110,16 @@
             </div>
         </section>
 
-        <p-overlayPanel [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" #op [dismissable]="true"
+        <p-overlayPanel [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" #userop [dismissable]="true"
             [showCloseIcon]="true">
             <ng-template pTemplate>
-                Content
+                
+                <button type="button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center"
+                    (click)="onLogoutClick()">
+                    Logout
+                </button>
+
             </ng-template>
         </p-overlayPanel>
 
@@ -154,7 +165,6 @@
                 </div>
             </div>
         </nav>
-        <style></style>
         <app-footer></app-footer>
     </div>
 
