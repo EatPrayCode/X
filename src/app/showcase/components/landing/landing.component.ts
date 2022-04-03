@@ -88,6 +88,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     theme: string = 'lara-light-blue';
 
     activeMenuIndex: number;
+    versions:any = [{}];
 
     toggleMenu(event: Event, index: number) {
         this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
