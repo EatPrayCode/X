@@ -56,8 +56,8 @@ import { AppLayoutTopBarComponent } from './layouts/app.layout-topbar.component'
         AppTopBarComponent,
         AppFooterComponent,
         AppLayoutTopBarComponent,
-        AppLayoutComponent,
         LandingComponent,
+        AppLayoutComponent,
     ],
     imports: [
         FormsModule,
