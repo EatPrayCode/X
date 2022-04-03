@@ -41,13 +41,13 @@ import { ProductService } from './service/productservice';
 
 import { AppTopBarComponent } from './layouts/app.topbar.component';
 import { AppFooterComponent } from './layouts/app.footer.component';
-import { AppDemoActionsModule } from './app.demoactions.component';
 import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
 import { CoreModule } from './core/core.module';
 import { AppLayoutComponent } from './layouts/app.layout.component';
 import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
+import { AppDemoActionsModule } from './shared/app.demoactions.component';
 
 @NgModule({
     declarations: [

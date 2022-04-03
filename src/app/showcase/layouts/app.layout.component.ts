@@ -112,8 +112,9 @@ export class AppLayoutComponent implements OnInit {
     });
 
     this.router.events.subscribe(event => {
+      console.log("GTAG FIX Required.");
       if (event instanceof NavigationEnd) {
-        gtag('config', 'UA-93461466-1',
+        gtag('config', 'UA-here-1',
           {
             'page_path': '/primeng' + event.urlAfterRedirects
           }
