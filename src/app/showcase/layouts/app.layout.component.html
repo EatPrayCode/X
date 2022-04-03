@@ -115,7 +115,7 @@
             <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="mobile-bottom-nav__item--active">
                 <div class="mobile-bottom-nav__item-content">
                     <i class="material-icons">{{item.icon}}</i>
-                    {{item.link}}
+                    <span>{{item.label | translate}}</span>
                 </div>
             </div>
         </nav>

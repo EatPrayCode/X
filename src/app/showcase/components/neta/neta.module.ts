@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { NetaHomeComponent } from './components/neta-home/neta-home.component';
 import { NetaVideosComponent } from './components/neta-videos/neta-videos.component';
 import { NetaOtherComponent } from './components/neta-other/neta-other.component';
 import { NetaNewsComponent } from './components/neta-news/neta-news.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(

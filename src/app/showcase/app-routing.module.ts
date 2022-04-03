@@ -12,7 +12,7 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
             {
                 path: '', component: AppLayoutComponent,
                 children: [
-                    // { path: '', redirectTo: 'setup', pathMatch: 'full' },
+                    { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'netas', loadChildren: () => import('./components/politicians/avatardemo.module').then(m => m.AvatarDemoModule) },
                     {
                         path: 'dashboard',
@@ -22,7 +22,7 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
                         //   profile: AppResolver
                         // },
                         resolve: {
-                          profile: AppProtectedResolver
+                            profile: AppProtectedResolver
                         }
                         // canActivate: [MarketingGuardService]
                     },
@@ -30,21 +30,25 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
                         path: 'admin-dashboard',
                         loadChildren: () =>
                             import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
-                            canActivate: [AdminGuardService]
+                        canActivate: [AdminGuardService]
                     },
-                    
-                ],
-            },
-            {
-                path: '', component: AppLayoutComponent,
-                children: [
-                    { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'netas', loadChildren: () => import('./components/politicians/avatardemo.module').then(m => m.AvatarDemoModule) },
+                    {
+                        path: 'settings',
+                        loadChildren: () =>
+                            import('./components/settings/settings.module').then(
+                                (m) => m.SettingsModule
+                            )
+                    },
                     { path: 'home', loadChildren: () => import('./components/home/setup.module').then(m => m.SetupModule) },
                     {
                         path: 'admin-dashboard',
                         loadChildren: () =>
                             import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
+                    },
+                    {
+                        path: ':id',
+                        loadChildren: () =>
+                            import('./components/neta/neta.module').then((m) => m.NetaModule)
                     },
                 ],
             },

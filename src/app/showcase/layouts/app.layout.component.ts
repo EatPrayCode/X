@@ -218,6 +218,11 @@ export class AppLayoutComponent implements OnInit {
       label: 'app.menu.admin-dashboard',
       icon: 'home'
     },
+    {
+      link: 'settings',
+      label: 'app.menu.settings',
+      icon: 'settings'
+    },
     // {
     //   link: 'visualize',
     //   label: 'app.menu.visualise',
@@ -236,11 +241,6 @@ export class AppLayoutComponent implements OnInit {
   ];
   navigationSideMenu = [
     ...this.navigation,
-    {
-      link: 'settings',
-      label: 'app.menu.settings',
-      icon: 'home'
-    },
     {
       link: 'preferences',
       label: 'app.menu.settings',
@@ -266,7 +266,6 @@ export class AppLayoutComponent implements OnInit {
         })
       );
     }
-
     this.isAuthenticated$ = of(false);
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
