@@ -199,24 +199,24 @@ export class AppLayoutComponent implements OnInit {
   languages = ['en', 'fr', 'es'];
   navigation: any = [
     {
-      link: 'connect',
+      link: 'home',
       label: 'app.menu.connect',
-      icon: 'envelope'
+      icon: 'home'
     },
     {
       link: 'netas',
       label: 'app.menu.netas',
-      icon: 'book-open'
+      icon: 'home'
     },
-    // {
-    //   link: 'dashboard',
-    //   label: 'app.menu.dashboard',
-    //   icon: 'bullhorn'
-    // },
+    {
+      link: 'dashboard',
+      label: 'app.menu.dashboard',
+      icon: 'home'
+    },
     {
       link: 'admin-dashboard',
       label: 'app.menu.admin-dashboard',
-      icon: 'user'
+      icon: 'home'
     },
     // {
     //   link: 'visualize',
@@ -228,23 +228,23 @@ export class AppLayoutComponent implements OnInit {
     //   label: 'app.menu.blog',
     //   icon: 'blog'
     // },
-    {
-      link: 'about',
-      label: 'app.menu.about',
-      icon: 'link'
-    }
+    // {
+    //   link: 'about',
+    //   label: 'app.menu.about',
+    //   icon: 'home'
+    // }
   ];
   navigationSideMenu = [
     ...this.navigation,
     {
       link: 'settings',
       label: 'app.menu.settings',
-      icon: 'github'
+      icon: 'home'
     },
     {
       link: 'preferences',
       label: 'app.menu.settings',
-      icon: 'github'
+      icon: 'home'
     }
   ];
 

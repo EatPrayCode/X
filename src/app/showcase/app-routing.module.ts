@@ -2,6 +2,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './components/landing/landing.component';
 import { AppLayoutComponent } from './layouts/app.layout.component';
+import { AdminGuardService } from './core/auth/guards/admin.guard';
+import { AppProtectedResolver } from './services/app.protected.resolver';
 
 @NgModule({
     imports: [
@@ -19,16 +21,18 @@ import { AppLayoutComponent } from './layouts/app.layout.component';
                         // resolve: {
                         //   profile: AppResolver
                         // },
-                        // resolve: {
-                        //   profile: AppProtectedResolver
-                        // }
+                        resolve: {
+                          profile: AppProtectedResolver
+                        }
                         // canActivate: [MarketingGuardService]
                     },
                     {
                         path: 'admin-dashboard',
                         loadChildren: () =>
                             import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
+                            canActivate: [AdminGuardService]
                     },
+                    
                 ],
             },
             {
@@ -36,7 +40,7 @@ import { AppLayoutComponent } from './layouts/app.layout.component';
                 children: [
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'netas', loadChildren: () => import('./components/politicians/avatardemo.module').then(m => m.AvatarDemoModule) },
-                    { path: 'home-all', loadChildren: () => import('./components/home-all/setup.module').then(m => m.SetupModule) },
+                    { path: 'home', loadChildren: () => import('./components/home/setup.module').then(m => m.SetupModule) },
                     {
                         path: 'admin-dashboard',
                         loadChildren: () =>

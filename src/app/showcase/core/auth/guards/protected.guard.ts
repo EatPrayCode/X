@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuardService implements CanActivate {
+export class ProtectedGuardService implements CanActivate {
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -24,8 +24,7 @@ export class AdminGuardService implements CanActivate {
         if (authState) { // check are user is logged in
           const token = await authState.getIdTokenResult();
           if (!token.claims.admin) { // check claims
-            alert('Not allowed');
-            console.log('Not allowed');
+            // alert('Not allowed');
             return false
           } else {
             return true

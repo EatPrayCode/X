@@ -1,5 +1,13 @@
+@use '~@angular/material' as mat;
+@include mat.core();
+
 @import "../node_modules/primeicons/primeicons.css";
 @import "../node_modules/primeflex/primeflex.css";
 @import "../node_modules/prismjs/themes/prism-coy.css";
 @import "../node_modules/quill/dist/quill.snow.css";
 @import "assets/showcase/styles/flags.css";
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

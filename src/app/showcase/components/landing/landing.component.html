@@ -15,7 +15,7 @@
                     <ol
                         class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
                         <li class="mr-0 lg:mr-2 lg:hidden">
-                            <a [routerLink]="['home-all']">
+                            <a [routerLink]="['home']">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
                                 <span>Home</span>
                             </a>
@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2 lg:hidden">
-                            <a [routerLink]="['home-all']">
+                            <a [routerLink]="['home']">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
                                 <span>Settings</span>
                             </a>
@@ -47,51 +47,38 @@
 
                         <p-overlayPanel #op>
                             <ng-template pTemplate>
-
+                                Hi
                                 <span *ngIf="language$ | async as language">
                                     <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
                                         <mat-option *ngFor="let l of languages" [value]="l">
-                                            {{ l.toUpperCase() }}
+                                            {{ l }}
                                         </mat-option>
                                     </mat-select>
                                 </span>
-
-                                <h5>Advanced with Group, Filtering and Multiple Selection</h5>
-                                <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
-                                    [metaKeySelection]="false" [filter]="true" [listStyle]="{'max-height':'250px'}"
-                                    [style]="{}">
-                                    <ng-template let-group pTemplate="group">
-                                        <div class="flex align-items-center">
-                                            <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
-                                                [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
-                                            <span>{{group.label}}</span>
-                                        </div>
-                                    </ng-template>
-                                </p-listbox>
-
                             </ng-template>
                         </p-overlayPanel>
-
-                        <li class="mr-2">
-                            <a (click)="op.toggle($event)">
-                                <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
-                                <span>Bhojpuri</span>
-                            </a>
-                        </li>
-
 
                     </ol>
                 </nav>
 
-                <a (click)="op.toggle($event)" class="mr-2 lg:hidden">
-                    Bhojpuri
+                <a *ngIf="language$ | async as language" class="mr-2 lg:hidden">
+                    {{language.toUpperCase()}}
                 </a>
+
+                <span *ngIf="language$ | async as language">
+                    <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
+                        <mat-option *ngFor="let l of languages" [value]="l">
+                            {{ l }}
+                        </mat-option>
+                    </mat-select>
+                </span>
 
                 <a *ngIf="(stateService.appSettingsSubject | async)?.uid" (click)="userop.toggle($event)" class="mr-2">
                     User
                 </a>
 
-                <a *ngIf="!(stateService.appSettingsSubject | async)?.uid" (click)="show()" rel="noopener noreferrer"
+                <a *ngIf="!(stateService.appSettingsSubject | async)?.uid" (click)="openLoginDialog()"
+                    rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
                 </a>
@@ -167,7 +154,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a [routerLink]="['home-all']">
+                        <a [routerLink]="['home']">
                             <div
                                 class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation logo hidden md:flex my-4 align-items-center justify-content-center">
                                 <div class="hero-box-inner text-center">
@@ -228,7 +215,7 @@
                 class="landing-getstarted flex flex-column md:flex-row align-items-center justify-content-center mt-4 z-1">
 
                 <a class="linkbox active font-semibold py-3 px-4 fadeinleft animation-duration-2000 animation-ease-out"
-                    [routerLink]="'home-all'">
+                    [routerLink]="'home'">
                     Get Started
                     <i class="pi pi-arrow-right ml-3"></i>
                 </a>

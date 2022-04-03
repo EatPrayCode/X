@@ -48,8 +48,9 @@
                 "src/.htaccess"
               ],
               "styles": [
+                "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                 "src/assets/showcase/styles/app/app.scss",
-                "src/styles.scss"
+              "src/styles.scss"
               ],
               "scripts": [
                 "./node_modules/prismjs/prism.js",
@@ -136,8 +137,9 @@
                 "src/upload.php"
               ],
               "styles": [
+                "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                 "src/styles.scss",
-                "src/assets/components/themes/lara-light-blue/theme.css"
+              "src/assets/components/themes/lara-light-blue/theme.css"
               ],
               "scripts": []
             }
