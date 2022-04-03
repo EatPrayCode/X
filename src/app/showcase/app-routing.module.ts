@@ -21,16 +21,16 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
                         // resolve: {
                         //   profile: AppResolver
                         // },
-                        resolve: {
-                            profile: AppProtectedResolver
-                        }
+                        // resolve: {
+                        //     profile: AppProtectedResolver
+                        // }
                         // canActivate: [MarketingGuardService]
                     },
                     {
                         path: 'admin-dashboard',
                         loadChildren: () =>
                             import('./admin-dashboard/admin-dashboard.module').then((m) => m.AdminDashboardModule),
-                        canActivate: [AdminGuardService]
+                        // canActivate: [AdminGuardService]
                     },
                     {
                         path: 'settings',
