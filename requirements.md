@@ -15,9 +15,9 @@ Donations and Donor Management
 
 Contacts and Groups Management
 
-Netas and Areas Management
+Netas Management
 
-Aysnc and Sync  Neta Citizen Connect Management
+Aysnc and Sync Neta Citizen Connect Management
 
 Area Analysis
 

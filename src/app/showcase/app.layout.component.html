@@ -73,22 +73,22 @@
         </div>
 
         <nav class="mobile-bottom-nav">
-            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                <div class="mobile-bottom-nav__item-content">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active" [routerLink]="">
+                <div class="mobile-bottom-nav__item-content" >
                     <i class="material-icons">home</i>
-                    one
+                    Home
                 </div>
             </div>
             <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
+                <div class="mobile-bottom-nav__item-content" [routerLink]="'netas'">
                     <i class="material-icons">mail</i>
-                    two
+                    Netas
                 </div>
             </div>
             <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
+                <div class="mobile-bottom-nav__item-content" [routerLink]="'admin-dashboard'">
                     <i class="material-icons">person</i>
-                    three
+                    Dashboard
                 </div>
             </div>
 
