@@ -54,18 +54,6 @@
                     </ol>
                 </nav>
 
-                <a *ngIf="language$ | async as language" class="">
-                    {{language.toUpperCase()}}
-                </a>
-
-                <span *ngIf="language$ | async as language" class="mr-2">
-                    <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
-                        <mat-option *ngFor="let l of languages" [value]="l">
-                            {{ l }}
-                        </mat-option>
-                    </mat-select>
-                </span>
-
                 <a *ngIf="(stateService.appSettingsSubject | async)?.uid" (click)="userop.toggle($event)" class="mr-2">
                     User
                 </a>
@@ -75,6 +63,18 @@
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
                 </a>
+
+                <a *ngIf="language$ | async as language" class="ml-2">
+                    {{language.toUpperCase()}}
+                </a>
+
+                <span *ngIf="language$ | async as language" class="mr-2">
+                    <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
+                        <mat-option *ngFor="let l of languages" [value]="l">
+                            {{ l.toUpperCase() }}
+                        </mat-option>
+                    </mat-select>
+                </span>
 
                 <button type="button"
                     class="linkbox header-button inline-flex align-items-center justify-content-center"
@@ -112,14 +112,15 @@
 
         <nav class="mobile-bottom-nav">
             <!-- mobile-bottom-nav__item--active -->
-            <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="mobile-bottom-nav__item--active">
+            <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]"
+                routerLinkActive="mobile-bottom-nav__item--active">
                 <div class="mobile-bottom-nav__item-content">
                     <i class="material-icons">{{item.icon}}</i>
                     <span>{{item.label | translate}}</span>
                 </div>
             </div>
         </nav>
-        
+
         <app-footer></app-footer>
     </div>
 
