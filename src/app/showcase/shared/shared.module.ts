@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { BigInputComponent } from './big-input/big-input/big-input.component';
-import { BigInputActionComponent } from './big-input/big-input-action/big-input-action.component';
 import { DemoMaterialModule } from './demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NetasListComponent } from './netas-list/netas-list/netas-list.component';
@@ -27,8 +25,6 @@ import { CardModule, } from 'primeng/card';
     ButtonModule,
   ],
   declarations: [
-    BigInputComponent,
-    BigInputActionComponent,
     NetasListComponent,
     SpeedDialFabComponent
   ],
@@ -42,8 +38,6 @@ import { CardModule, } from 'primeng/card';
     CardModule,
     ButtonModule,
 
-    BigInputComponent,
-    BigInputActionComponent,
     NetasListComponent,
     SpeedDialFabComponent
   ]

@@ -9,7 +9,7 @@ import {ToastModule} from 'primeng/toast';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { BadgeModule } from 'primeng/badge';
-import { AppCodeModule } from '../../app.code.component';
+
 import {AppDemoActionsModule} from '../../app.demoactions.component';
 import { CardModule } from 'primeng/card';
 
@@ -25,7 +25,6 @@ import { CardModule } from 'primeng/card';
 		AvatarGroupModule,
 		BadgeModule,
 		AppDemoActionsModule,
-		AppCodeModule,
 		CardModule
 	],
 	declarations: [

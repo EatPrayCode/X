@@ -14,7 +14,7 @@
                     <ol
                         class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
                         <li class="mr-0 lg:mr-2">
-                            <a [routerLink]="['setup']">
+                            <a [routerLink]="['home-all']">
                                 <img src="assets/showcase/images/landing/core-icon.svg" alt="Primeng core">
                                 <span>Components</span>
                             </a>
@@ -73,7 +73,7 @@
         </div>
 
         <nav class="mobile-bottom-nav">
-            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active" [routerLink]="">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active" [routerLink]="'home-all'">
                 <div class="mobile-bottom-nav__item-content" >
                     <i class="material-icons">home</i>
                     Home
@@ -87,15 +87,15 @@
             </div>
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content" [routerLink]="'admin-dashboard'">
-                    <i class="material-icons">person</i>
+                    <i class="material-icons">phone</i>
                     Dashboard
                 </div>
             </div>
 
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content">
-                    <i class="material-icons">phone</i>
-                    four
+                    <i class="material-icons">person</i>
+                    Settings
                 </div>
             </div>
         </nav>

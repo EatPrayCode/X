@@ -1,5 +1,4 @@
 import { OverlayPanelModule } from 'primeng/overlaypanel';
-import { AppBlankComponent } from './app.blank.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +7,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -41,33 +40,20 @@ import { VersionService } from './service/versionservice';
 import { AppConfigService } from './service/appconfigservice';
 import { ProductService } from './service/productservice';
 
-import { AppNewsComponent } from './app.news.component';
 import { AppTopBarComponent } from './app.topbar.component';
-import { AppMenuComponent } from './app.menu.component';
-import { AppConfigComponent } from './app.config.component';
 import { AppFooterComponent } from './app.footer.component';
-import { AppInputStyleSwitchModule } from './app.inputstyleswitch.component';
 import { AppDemoActionsModule } from './app.demoactions.component';
 import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
-import { AppMainComponent } from './app.main.component';
 import { CoreModule } from './core/core.module';
-import { AppTopBarInnerPagesComponent } from './app.topbar-inner-pages.component';
 import { AppLayoutComponent } from './app.layout.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        AppNewsComponent,
         AppTopBarComponent,
-        AppMenuComponent,
-        AppConfigComponent,
         AppFooterComponent,
         LandingComponent,
-        AppMainComponent,
-        AppBlankComponent,
-        AppTopBarInnerPagesComponent,
         AppLayoutComponent
     ],
     imports: [
@@ -82,7 +68,6 @@ import { AppLayoutComponent } from './app.layout.component';
         RadioButtonModule,
         InputSwitchModule,
         TooltipModule,
-        AppInputStyleSwitchModule,
         AppDemoActionsModule,
         ChartModule,
         TabMenuModule,
