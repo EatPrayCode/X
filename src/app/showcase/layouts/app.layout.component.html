@@ -65,7 +65,7 @@
                             </ng-template>
                         </p-overlayPanel>
 
-                        <li class="mr-0 lg:mr-2">
+                        <li class="mr-2">
                             <a (click)="op.toggle($event)">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
                                 <span>Bhojpuri</span>
@@ -74,6 +74,11 @@
 
                     </ol>
                 </nav>
+
+                <a (click)="op.toggle($event)" class="mr-2 lg:hidden">
+                    Bhojpuri
+                </a>
+                
                 <a (click)="show()" rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
