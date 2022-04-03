@@ -1,4 +1,3 @@
-
 <style>
     @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 
@@ -53,11 +52,11 @@
 
     label {
         font-weight: 700;
-        font-size: 18px;
+        font-size: 1.5rem;
         display: block;
         float: left;
         width: 20%;
-        padding: 1.5em;
+        padding: 0.8em;
         /* color: #757575; */
         cursor: pointer;
         text-decoration: none;
@@ -96,14 +95,15 @@
     }
 
     label .fa {
-        font-size: 1.3em;
+        font-size: 1.1rem;
         margin: 0 0.4em 0 0;
     }
 
     /*Media query*/
     @media only screen and (max-width: 900px) {
         label span {
-            display: none;
+            /* display: none; */
+            font-size: 1.0rem;
         }
 
         .tab_container {
@@ -132,10 +132,15 @@
     .link {
         text-align: center;
     }
+
+    .tab-header {
+        display: flex;
+        justify-content: space-between;
+    }
 </style>
 
 
-<!-- <h1>Responsive CSS Tabs</h1> -->
+<h1>Netas</h1>
 <div class="tab_container">
     <input id="tab1" type="radio" name="tabs" checked>
     <label for="tab1"><i class="fa fa-code"></i><span>Code</span></label>
@@ -153,20 +158,22 @@
     <label for="tab5"><i class="fa fa-envelope-o"></i><span>Contact</span></label>
 
     <section id="content1" class="tab-content">
-        <h3>Headline 1</h3>
-        <app-demoActions github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        
+        <div class="tab-header">
+            <h3 class="ml-3">Headline 1</h3>
+            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
+        </div>
+
         <div class="content-section implementation">
             <div class="grid">
-        
+
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Label - Circle</h5>
                         <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
                         <p-avatar label="V" styleClass="mr-2" size="large"
                             [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
-                            shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
                     </div>
                 </div>
                 <div class="col-12 md:col-4">
@@ -210,11 +217,12 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="xlarge"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2" shape="circle">
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
                         </p-avatar>
                     </div>
                 </div>
@@ -222,15 +230,20 @@
                     <div class="card">
                         <h5>Avatar Group</h5>
                         <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
                             </p-avatar>
                             <p-avatar label="+2" shape="circle" size="large"
                                 [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
@@ -240,28 +253,31 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4" severity="danger"
-                            styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </section>
 
     <section id="content2" class="tab-content">
-        <h3>Headline 2</h3>
+        <div class="tab-header">
+            <h3 class="ml-3">Headline 2</h3>
+            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
+        </div>
         <div class="content-section implementation">
             <div class="grid">
-        
+
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Label - Circle</h5>
                         <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
                         <p-avatar label="V" styleClass="mr-2" size="large"
                             [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
-                            shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
                     </div>
                 </div>
                 <div class="col-12 md:col-4">
@@ -305,11 +321,12 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="xlarge"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2" shape="circle">
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
                         </p-avatar>
                     </div>
                 </div>
@@ -317,15 +334,20 @@
                     <div class="card">
                         <h5>Avatar Group</h5>
                         <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
                             </p-avatar>
                             <p-avatar label="+2" shape="circle" size="large"
                                 [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
@@ -335,8 +357,8 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4" severity="danger"
-                            styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
                     </div>
                 </div>
             </div>
@@ -344,18 +366,21 @@
     </section>
 
     <section id="content3" class="tab-content">
-        <h3>Headline 3</h3>
+        <div class="tab-header">
+            <h3 class="ml-3">Headline 3</h3>
+            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
+        </div>
         <div class="content-section implementation">
             <div class="grid">
-        
+
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Label - Circle</h5>
                         <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
                         <p-avatar label="V" styleClass="mr-2" size="large"
                             [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
-                            shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
                     </div>
                 </div>
                 <div class="col-12 md:col-4">
@@ -399,11 +424,12 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="xlarge"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2" shape="circle">
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
                         </p-avatar>
                     </div>
                 </div>
@@ -411,15 +437,20 @@
                     <div class="card">
                         <h5>Avatar Group</h5>
                         <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
                             </p-avatar>
                             <p-avatar label="+2" shape="circle" size="large"
                                 [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
@@ -429,8 +460,8 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4" severity="danger"
-                            styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
                     </div>
                 </div>
             </div>
@@ -438,18 +469,21 @@
     </section>
 
     <section id="content4" class="tab-content">
-        <h3>Headline 4</h3>
+        <div class="tab-header">
+            <h3 class="ml-3">Headline 4</h3>
+            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
+        </div>
         <div class="content-section implementation">
             <div class="grid">
-        
+
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Label - Circle</h5>
                         <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
                         <p-avatar label="V" styleClass="mr-2" size="large"
                             [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
-                            shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
                     </div>
                 </div>
                 <div class="col-12 md:col-4">
@@ -493,11 +527,12 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="xlarge"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2" shape="circle">
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
                         </p-avatar>
                     </div>
                 </div>
@@ -505,15 +540,20 @@
                     <div class="card">
                         <h5>Avatar Group</h5>
                         <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
                             </p-avatar>
                             <p-avatar label="+2" shape="circle" size="large"
                                 [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
@@ -523,8 +563,8 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4" severity="danger"
-                            styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
                     </div>
                 </div>
             </div>
@@ -532,18 +572,20 @@
     </section>
 
     <section id="content5" class="tab-content">
-        <h3>Headline 5</h3>
+        <div class="tab-header">
+            <h3 class="ml-3">Headline 5</h3>
+            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
+        </div>
         <div class="content-section implementation">
             <div class="grid">
-        
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Label - Circle</h5>
                         <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
                         <p-avatar label="V" styleClass="mr-2" size="large"
                             [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
-                            shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
                     </div>
                 </div>
                 <div class="col-12 md:col-4">
@@ -587,11 +629,12 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="xlarge"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large"
-                            shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2" shape="circle">
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
                         </p-avatar>
                     </div>
                 </div>
@@ -599,15 +642,20 @@
                     <div class="card">
                         <h5>Avatar Group</h5>
                         <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
                             </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large" shape="circle">
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
                             </p-avatar>
                             <p-avatar label="+2" shape="circle" size="large"
                                 [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
@@ -617,12 +665,11 @@
                 <div class="col-12 md:col-4">
                     <div class="card">
                         <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4" severity="danger"
-                            styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </div>
-
