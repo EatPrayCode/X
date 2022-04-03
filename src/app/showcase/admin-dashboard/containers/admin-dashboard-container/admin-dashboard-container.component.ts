@@ -23,7 +23,7 @@ export class AdminDashboardContainerComponent implements OnInit {
     {
       id: 'States',
       link: '/admin-dashboard/states',
-      name: 'states',
+      name: 'States',
       label: 'app.connect.menu.connect-home'
     },
     {
