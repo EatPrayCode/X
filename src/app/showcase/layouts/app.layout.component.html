@@ -54,11 +54,11 @@
                     </ol>
                 </nav>
 
-                <a *ngIf="language$ | async as language" class="mr-2 lg:hidden">
+                <a *ngIf="language$ | async as language" class="">
                     {{language.toUpperCase()}}
                 </a>
 
-                <span *ngIf="language$ | async as language">
+                <span *ngIf="language$ | async as language" class="mr-2">
                     <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
                         <mat-option *ngFor="let l of languages" [value]="l">
                             {{ l }}
