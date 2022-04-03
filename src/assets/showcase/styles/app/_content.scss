@@ -10,7 +10,7 @@
         flex-direction: column;
 
         .content-section {
-            padding: 2rem 2rem;
+            // padding: 2rem 2rem;
             flex-grow: 1;
 
             &.introduction {
@@ -221,7 +221,7 @@
             background: var(--surface-card);
             padding: 2rem;
             border-radius: 10px;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
     
             .card-header {
                 display: flex;
