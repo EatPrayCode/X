@@ -50,8 +50,8 @@
 
                                 <h5>Advanced with Group, Filtering and Multiple Selection</h5>
                                 <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
-                                    [metaKeySelection]="false" [checkbox]="true" [filter]="true" [multiple]="true"
-                                    [listStyle]="{'max-height':'250px'}" [style]="{'width':'15rem'}">
+                                    [metaKeySelection]="false" [filter]="true"
+                                    [listStyle]="{'max-height':'250px'}" [style]="{}">
                                     <ng-template let-group pTemplate="group">
                                         <div class="flex align-items-center">
                                             <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
@@ -60,7 +60,6 @@
                                         </div>
                                     </ng-template>
                                 </p-listbox>
-
 
                             </ng-template>
                         </p-overlayPanel>
@@ -111,7 +110,7 @@
                     <div class="p-2 flex flex-row md:flex-column">
                         <a [routerLink]="'visualize'">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation flex align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation flex align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/templates-icon.svg"
                                         alt="primeng templates" />
@@ -124,7 +123,7 @@
                         </a>
                         <a [routerLink]="['netas']">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation ml-4 md:ml-0 md:mt-4 flex align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation ml-4 md:ml-0 md:mt-4 flex align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/designer-icon.svg"
                                         alt="primeng templates" />
@@ -139,7 +138,7 @@
                     <div class="p-2 flex flex-row md:flex-column">
                         <a [routerLink]="'news'">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation flex align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation flex align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/core-icon.svg" alt="primeng core" />
                                     <div class="name">
@@ -151,7 +150,7 @@
                         </a>
                         <a [routerLink]="['home-all']">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation logo hidden md:flex my-4 align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation logo hidden md:flex my-4 align-items-center justify-content-center">
                                 <div class="hero-box-inner text-center">
                                     <img src="assets/showcase/images/landing/overview-icon.svg" alt="primeng main" />
                                     <div class="name flex flex-column">
@@ -163,7 +162,7 @@
                         </a>
                         <a [routerLink]="['blog']">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation flex ml-4 md:ml-0 align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation flex ml-4 md:ml-0 align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/css-icon.svg" alt="primeng icons" />
                                     <div class="name">
@@ -177,7 +176,7 @@
                     <div class="p-2 flex flex-row md:flex-column">
                         <a [routerLink]="'netas'">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation flex align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation flex align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/blocks-icon.svg" alt="primeng templates" />
                                     <div class="name">
@@ -189,7 +188,7 @@
                         </a>
                         <a [routerLink]="['store']">
                             <div
-                                class="hero-box w-10rem h-10rem md:w-12rem md:h-12rem animation flex ml-4 md:ml-0 md:mt-4 align-items-center justify-content-center">
+                                class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem animation flex ml-4 md:ml-0 md:mt-4 align-items-center justify-content-center">
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/icons-icon.svg" alt="primeng templates" />
                                     <div class="name">
@@ -207,7 +206,7 @@
             </div>
 
             <section
-                class="landing-getstarted flex flex-column md:flex-row align-items-center justify-content-center mt-8 z-1">
+                class="landing-getstarted flex flex-column md:flex-row align-items-center justify-content-center mt-4 z-1">
 
                 <a class="linkbox active font-semibold py-3 px-4 fadeinleft animation-duration-2000 animation-ease-out"
                     [routerLink]="'home-all'">
@@ -216,7 +215,7 @@
                 </a>
 
                 <div
-                    class="box download-box font-medium p-3 px-4 mt-3 md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center fadeinright animation-duration-2000 animation-ease-out">
+                    class="box download-box font-medium p-3 px-4 mt- md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center fadeinright animation-duration-2000 animation-ease-out">
                     <i class="download-icon pi pi-download mr-3"></i>
                     <span class="font-bold" :style="{fontFamily:'monaco'}" [routerLink]="'netas'">Explore</span>
                 </div>
@@ -229,11 +228,9 @@
         </section>
     </div>
 
-    <div class="layout-content">
-        <div class="layout-content-inner h-full">
-            <!-- <router-outlet></router-outlet> -->
-        </div>
+    <div class="">
         <app-footer></app-footer>
+
     </div>
 
 </div>

@@ -1,7 +1,7 @@
 <div class="layout-wrapper landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
 
     <div class="">
-        <!-- <app-layout-topbar></app-layout-topbar> -->
+
         <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
             <span>
                 <a href="/">
@@ -50,8 +50,8 @@
 
                                 <h5>Advanced with Group, Filtering and Multiple Selection</h5>
                                 <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
-                                    [metaKeySelection]="false" [checkbox]="true" [filter]="true" [multiple]="true"
-                                    [listStyle]="{'max-height':'250px'}" [style]="{'width':'15rem'}">
+                                    [metaKeySelection]="false" [filter]="true"
+                                    [listStyle]="{'max-height':'250px'}" [style]="{}">
                                     <ng-template let-group pTemplate="group">
                                         <div class="flex align-items-center">
                                             <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
@@ -60,7 +60,6 @@
                                         </div>
                                     </ng-template>
                                 </p-listbox>
-
 
                             </ng-template>
                         </p-overlayPanel>
@@ -78,14 +77,10 @@
                 <a (click)="op.toggle($event)" class="mr-2 lg:hidden">
                     Bhojpuri
                 </a>
-                
+
                 <a (click)="show()" rel="noopener noreferrer"
                     class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
                     <i class="pi pi-github"></i>
-                </a>
-                <a (click)="op.toggle($event)" rel="noopener noreferrer"
-                    class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
-                    <i class="pi pi-discord"></i>
                 </a>
 
                 <button type="button"
@@ -100,6 +95,14 @@
                 </button>
             </div>
         </section>
+
+        <p-overlayPanel [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" #op [dismissable]="true"
+            [showCloseIcon]="true">
+            <ng-template pTemplate>
+                Content
+            </ng-template>
+        </p-overlayPanel>
+
     </div>
 
     <div class="layout-content">
