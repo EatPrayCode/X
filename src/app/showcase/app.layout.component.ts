@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { AppConfigService } from './service/appconfigservice';
 import { AppConfig } from './domain/appconfig';
 import { Subscription } from 'rxjs';
-import { PrimeNGConfig, MenuItem, SelectItem, TreeNode } from 'primeng/api';
+import { PrimeNGConfig, MenuItem, SelectItem, TreeNode, MessageService } from 'primeng/api';
 
 import { MatDialog } from '@angular/material/dialog';
 import browser from 'browser-detect';
@@ -13,6 +13,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 
 import { environment as env } from '../../environments/environment';
+
 
 import {
   routeAnimations,
@@ -32,6 +33,9 @@ import { StateService } from './services/state.service';
 import { Customer, Representative } from './domain/customer';
 import { CustomerService } from './service/customerservice';
 import { NodeService } from './service/nodeservice';
+
+import { DynamicDialogRef, DialogService } from 'primeng/dynamicdialog';
+
 
 declare let gtag: Function;
 
@@ -61,13 +65,31 @@ export class AppLayoutComponent implements OnInit {
 
   activeMenuIndex: number;
 
+
+  ref: DynamicDialogRef;
+
+  show() {
+    this.ref = this.dialogService.open(SigninComponent, {
+      header: 'Choose a Product',
+      width: '70%',
+      contentStyle: { "max-height": "500px", "overflow": "auto" },
+      baseZIndex: 10000
+    });
+
+    this.ref.onClose.subscribe((product: any) => {
+      if (product) {
+        this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: product.name });
+      }
+    });
+  }
+
   toggleMenu(event: Event, index: number) {
     this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
     event.preventDefault();
   }
 
   versions: any[];
-  
+
   constructor(
     private store: Store<AppState>,
     private storageService: LocalStorageService,
@@ -78,7 +100,8 @@ export class AppLayoutComponent implements OnInit {
     private primengConfig: PrimeNGConfig,
     private nodeService: NodeService,
     private customerService: CustomerService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    public dialogService: DialogService, public messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -615,5 +638,9 @@ export class AppLayoutComponent implements OnInit {
       this.subscription.unsubscribe();
     }
     this.unbindScrollListener();
+
+    if (this.ref) {
+      this.ref.close();
+    }
   }
 }

@@ -47,6 +47,8 @@ import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
 import { CoreModule } from './core/core.module';
 import { AppLayoutComponent } from './app.layout.component';
+import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
     declarations: [
@@ -84,12 +86,14 @@ import { AppLayoutComponent } from './app.layout.component';
         InputMaskModule,
         DropdownModule,
 
+        DynamicDialogModule,
+
         CoreModule,
         OverlayPanelModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
-        CarService,CountryService,EventService,NodeService,IconService,CustomerService,PhotoService,VersionService,AppConfigService, ProductService
+        CarService,CountryService,EventService,NodeService,IconService,CustomerService,PhotoService,VersionService,AppConfigService, ProductService, DialogService, MessageService
     ],
     bootstrap: [AppComponent]
 })

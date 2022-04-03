@@ -1,3 +1,6 @@
+import {DynamicDialogRef} from 'primeng/dynamicdialog';
+import {DynamicDialogConfig} from 'primeng/dynamicdialog';
+
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -23,9 +26,8 @@ export class SigninComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private afStore: AngularFirestore,
-    private ref: MatDialogRef<SigninComponent>,
-    @Inject(MAT_DIALOG_DATA) private action: loginAction,
-    public stateService: StateService
+    public stateService: StateService,
+    public ref: DynamicDialogRef, public config: DynamicDialogConfig
   ) { }
 
   ngOnInit() {
