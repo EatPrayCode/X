@@ -106,6 +106,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     this.onInitFn();
+    this.OninitCore();
     this.primengConfig.ripple = true;
     this.config = this.configService.config;
     this.subscription = this.configService.configUpdate$.subscribe(config => {
@@ -256,7 +257,7 @@ export class LandingComponent implements OnInit {
     return ['ie', 'edge', 'safari'].includes(browser().name || '');
   }
 
-  Oninit(): void {
+  OninitCore(): void {
     this.storageService.testLocalStorage();
     if (LandingComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(

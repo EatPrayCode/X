@@ -15,31 +15,31 @@
                     <ol
                         class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
                         <li class="mr-0 lg:mr-2">
-                            <a href="https://www.primefaces.org/store/templates.xhtml">
+                            <a [routerLink]="['home-all']">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
                                 <span>Home</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
-                            <a [routerLink]="['home-all']">
+                            <a [routerLink]="['netas']">
                                 <img src="assets/showcase/images/landing/core-icon.svg" alt="Primeng core">
                                 <span>Netas</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
-                            <a href="https://www.primefaces.org/primeblocks-ng">
+                            <a [routerLink]="['admin-dashboard']">
                                 <img src="assets/showcase/images/landing/blocks-icon.svg" alt="Primeng blocks">
                                 <span>Admin</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
-                            <a href="https://www.primefaces.org/designer-ng">
+                            <a [routerLink]="['dashboard']">
                                 <img src="assets/showcase/images/landing/designer-icon.svg" alt="Primeng designer">
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
-                            <a href="https://www.primefaces.org/store/templates.xhtml">
+                            <a [routerLink]="['home-all']">
                                 <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
                                 <span>Settings</span>
                             </a>
@@ -47,6 +47,14 @@
 
                         <p-overlayPanel #op>
                             <ng-template pTemplate>
+
+                                <span *ngIf="language$ | async as language">
+                                    <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
+                                        <mat-option *ngFor="let l of languages" [value]="l">
+                                            {{ l.toUpperCase() }}
+                                        </mat-option>
+                                    </mat-select>
+                                </span>
 
                                 <h5>Advanced with Group, Filtering and Multiple Selection</h5>
                                 <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountries"
@@ -70,6 +78,7 @@
                                 <span>Bhojpuri</span>
                             </a>
                         </li>
+
 
                     </ol>
                 </nav>
