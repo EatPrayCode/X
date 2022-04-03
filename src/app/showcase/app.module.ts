@@ -25,7 +25,6 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ListboxModule } from 'primeng/listbox';
-import { InputMaskModule } from '../components/inputmask/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
 
 import { CarService } from './service/carservice';
@@ -40,13 +39,13 @@ import { VersionService } from './service/versionservice';
 import { AppConfigService } from './service/appconfigservice';
 import { ProductService } from './service/productservice';
 
-import { AppTopBarComponent } from './app.topbar.component';
-import { AppFooterComponent } from './app.footer.component';
+import { AppTopBarComponent } from './layouts/app.topbar.component';
+import { AppFooterComponent } from './layouts/app.footer.component';
 import { AppDemoActionsModule } from './app.demoactions.component';
 import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
 import { CoreModule } from './core/core.module';
-import { AppLayoutComponent } from './app.layout.component';
+import { AppLayoutComponent } from './layouts/app.layout.component';
 import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
 
@@ -83,7 +82,6 @@ import { MessageService } from 'primeng/api';
         TableModule,
         CheckboxModule,
         ListboxModule,
-        InputMaskModule,
         DropdownModule,
 
         DynamicDialogModule,

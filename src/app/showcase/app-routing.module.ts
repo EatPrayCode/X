@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './components/landing/landing.component';
-import { AppLayoutComponent } from './app.layout.component';
+import { AppLayoutComponent } from './layouts/app.layout.component';
 
 @NgModule({
     imports: [
