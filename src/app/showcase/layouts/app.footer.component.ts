@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
         <div class="layout-footer">
             <div class="layout-footer-left">
                 <span>Developed by </span>
-                <a href="https://www.primetek.com.tr">albatroztech.com</a>
+                <a href="https://www.primetek.com.tr">copyright.com</a>
             </div>
 
             <div class="layout-footer-right">

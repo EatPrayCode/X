@@ -12,6 +12,7 @@ import { BadgeModule } from 'primeng/badge';
 
 import { AppDemoActionsModule } from '../../shared/app.demoactions.component';
 import { CardModule } from 'primeng/card';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
 	imports: [
@@ -25,7 +26,8 @@ import { CardModule } from 'primeng/card';
 		AvatarGroupModule,
 		BadgeModule,
 		AppDemoActionsModule,
-		CardModule
+		CardModule,
+		SharedModule
 	],
 	declarations: [
 		AvatarDemo
