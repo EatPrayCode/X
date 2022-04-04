@@ -1,36 +1,39 @@
 <div class="content">
-    <div fxLayout="row wrap" fxLayoutGap="5px grid">
-        <div fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="33%" [ngClass]="routeAnimationsElements" *ngFor="let neta of netas">
-            <mat-card class="neta-container mat-elevation-z4">
-                <mat-card-header class="neta-header">
-                    <mat-card-title>Neta Name </mat-card-title>
-                </mat-card-header>
-                <img mat-card-image src="https://avatars0.githubusercontent.com/u/3764868?v=4">
-                <mat-card-content>
-                    <p>
-                        Description that is this long: The Himalayas is a mountain range in Asia.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions class="neta-action">
-                    <button mat-button (click)="openNetaDetails(neta)">View</button>
-                    <button mat-button (click)="connectWithNeta(neta)">
-                        <!-- <fa-icon icon="envelope"></fa-icon> -->
-                    </button>
-                </mat-card-actions>
-            </mat-card>
+  <div fxLayout="row wrap" fxLayoutGap="5px grid">
+    <div fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="50%" [ngClass]="routeAnimationsElements" *ngFor="let neta of netas">
+
+      <div class="card">
+        <div class="left">
+          <img src="https://lh3.googleusercontent.com/ogw/ADea4I53IZ54wvTnQaHVKZEGEx7Knjw3Hko7wLfS-8oDGQ=s83-c-mo" />
+          <div class="img-border">
+            <div class="img-border">
+            </div>
+          </div>
+          <div class="card-info">
+            <h2>Eli Moyal</h2>
+            <p>Full stack developer</p>
+          </div>
+          <div class="card-btn">
+            <button>Follow</button>
+            <button>Message</button>
+          </div>
         </div>
+        <div class="right">
+          <div>
+            <h3>523</h3>
+            <p>Posts</p>
+          </div>
+          <div>
+            <h3>1387</h3>
+            <p>Likes</p>
+          </div>
+          <div>
+            <h3>146</h3>
+            <p>Followers</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>
-
-
-<!-- <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png">
-    </ng-template>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-    <ng-template pTemplate="footer">
-        <p-button label="Save" icon="pi pi-check"></p-button>
-        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
-    </ng-template>
-</p-card> -->
