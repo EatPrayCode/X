@@ -13,6 +13,7 @@ import { BadgeModule } from 'primeng/badge';
 import { AppDemoActionsModule } from '../../shared/app.demoactions.component';
 import { CardModule } from 'primeng/card';
 import { SharedModule } from '../../shared/shared.module';
+import { NetasForYouComponent } from './netas-for-you/netas-for-you.component';
 
 @NgModule({
 	imports: [
@@ -30,7 +31,8 @@ import { SharedModule } from '../../shared/shared.module';
 		SharedModule
 	],
 	declarations: [
-		AvatarDemo
+		AvatarDemo,
+		NetasForYouComponent
 	]
 })
 export class AvatarDemoModule { }

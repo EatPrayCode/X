@@ -1,703 +1,208 @@
 <mat-tab-group>
     <mat-tab label="First">
-        <ng-template mat-tab-label>
-            <span class="red-bold">zzzzz</span>
-        </ng-template>
+        <app-netas-for-you></app-netas-for-you>
     </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Second">
+        <div class="content-section implementation">
+            <div class="grid">
+
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Label - Circle</h5>
+                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar label="V" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Label - Badge</h5>
+                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
+                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon</h5>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon - Circle</h5>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon - Badge</h5>
+                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
+                        </p-avatar>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Image</h5>
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
+                        </p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Avatar Group</h5>
+                        <p-avatarGroup styleClass="mb-3">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar label="+2" shape="circle" size="large"
+                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
+                        </p-avatarGroup>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Image - Badge</h5>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Third">
+        <div class="content-section implementation">
+            <div class="grid">
+
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Label - Circle</h5>
+                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar label="V" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                        <p-avatar label="U" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Label - Badge</h5>
+                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
+                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon</h5>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon - Circle</h5>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                        <p-avatar icon="pi pi-user" styleClass="mr-2"
+                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Icon - Badge</h5>
+                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
+                        </p-avatar>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Image</h5>
+                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+                            size="xlarge" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
+                            size="large" shape="circle"></p-avatar>
+                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
+                            shape="circle">
+                        </p-avatar>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Avatar Group</h5>
+                        <p-avatarGroup styleClass="mb-3">
+                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
+                                shape="circle">
+                            </p-avatar>
+                            <p-avatar label="+2" shape="circle" size="large"
+                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
+                        </p-avatarGroup>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4">
+                    <div class="card">
+                        <h5>Image - Badge</h5>
+                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
+                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
 </mat-tab-group>
 
 <style>
-    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-
-    *,
-    *:after,
-    *:before {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .clearfix:before,
-    .clearfix:after {
-        content: " ";
-        display: table;
-    }
-
-    .clearfix:after {
-        clear: both;
-    }
-
-    /* body {
-	font-family: sans-serif;
-	background: #f6f9fa;
-} */
-
-    h1 {
-        color: #ccc;
-        text-align: center;
-    }
-
-    a {
-        color: #ccc;
-        text-decoration: none;
-        outline: none;
-    }
-
-    /*Fun begins*/
-    .tab_container {
-        width: 90%;
-        margin: 0 auto;
-        /* padding-top: 70px; */
-        position: relative;
-    }
-
-    input,
-    section {
-        clear: both;
-        padding-top: 10px;
-        display: none;
-    }
-
-    label {
-        font-weight: 700;
-        font-size: 1.5rem;
-        display: block;
-        float: left;
-        width: 20%;
-        padding: 0.9em;
-        /* color: #757575; */
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-        /* background: #f0f0f0; */
-    }
-
-    #tab1:checked~#content1,
-    #tab2:checked~#content2,
-    #tab3:checked~#content3,
-    #tab4:checked~#content4,
-    #tab5:checked~#content5 {
-        display: block;
-        /* padding: 20px; */
-        border-bottom: 2px solid #f0f0f0;
-    }
-
-    .tab_container .tab-content p,
-    .tab_container .tab-content h3 {
-        -webkit-animation: fadeInScale 0.7s ease-in-out;
-        -moz-animation: fadeInScale 0.7s ease-in-out;
-        animation: fadeInScale 0.7s ease-in-out;
-    }
-
-    .tab_container .tab-content h3 {
-        text-align: center;
-    }
-
-    .tab_container [id^="tab"]:checked+label {
-        /* background: #fff; */
-        box-shadow: inset 0 3px #0CE;
-    }
-
-    .tab_container [id^="tab"]:checked+label .fa {
-        color: #0CE;
-    }
-
-    label .fa {
-        font-size: 1.1rem;
-        margin: 0 0.4em 0 0;
-    }
-
-    /*Media query*/
-    @media only screen and (max-width: 900px) {
-        label span {
-            /* display: none; */
-            font-size: 1.0rem;
-        }
-
-        .tab_container {
-            width: 98%;
-        }
-    }
-
-    /*Content Animation*/
-    @keyframes fadeInScale {
-        0% {
-            transform: scale(0.9);
-            opacity: 0;
-        }
-
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    .no_wrap {
-        text-align: center;
-        color: #0ce;
-    }
-
-    .link {
-        text-align: center;
-    }
-
     .tab-header {
         display: flex;
         justify-content: space-between;
-    }
-</style>
-
-
-<h1>Netas</h1>
-<div class="tab_container">
-    <input id="tab1" type="radio" name="tabs" checked>
-    <label for="tab1"><i class="fa fa-code"></i><span>You</span></label>
-
-    <input id="tab2" type="radio" name="tabs">
-    <label for="tab2"><i class="fa fa-pencil-square-o"></i><span>Top</span></label>
-
-    <input id="tab3" type="radio" name="tabs">
-    <label for="tab3"><i class="fa fa-bar-chart-o"></i><span>State</span></label>
-
-    <input id="tab4" type="radio" name="tabs">
-    <label for="tab4"><i class="fa fa-folder-open-o"></i><span>Party</span></label>
-
-    <input id="tab5" type="radio" name="tabs">
-    <label for="tab5"><i class="fa fa-envelope-o"></i><span>History</span></label>
-
-    <section id="content1" class="tab-content">
-        <div class="tab-header">
-            <h3 class="ml-3">Headline 1</h3>
-            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        </div>
-
-        <div class="content-section implementation">
-            <div class="grid">
-
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Circle</h5>
-                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar label="V" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Badge</h5>
-                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
-                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Circle</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Badge</h5>
-                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
-                        </p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
-                            size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
-                            size="large" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
-                            shape="circle">
-                        </p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Avatar Group</h5>
-                        <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar label="+2" shape="circle" size="large"
-                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                        </p-avatarGroup>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
-                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="content2" class="tab-content">
-        <div class="tab-header">
-            <h3 class="ml-3">Headline 2</h3>
-            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        </div>
-        <div class="content-section implementation">
-            <div class="grid">
-
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Circle</h5>
-                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar label="V" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Badge</h5>
-                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
-                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Circle</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Badge</h5>
-                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
-                        </p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
-                            size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
-                            size="large" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
-                            shape="circle">
-                        </p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Avatar Group</h5>
-                        <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar label="+2" shape="circle" size="large"
-                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                        </p-avatarGroup>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
-                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="content3" class="tab-content">
-        <div class="tab-header">
-            <h3 class="ml-3">Headline 3</h3>
-            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        </div>
-        <div class="content-section implementation">
-            <div class="grid">
-
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Circle</h5>
-                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar label="V" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Badge</h5>
-                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
-                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Circle</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Badge</h5>
-                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
-                        </p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
-                            size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
-                            size="large" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
-                            shape="circle">
-                        </p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Avatar Group</h5>
-                        <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar label="+2" shape="circle" size="large"
-                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                        </p-avatarGroup>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
-                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="content4" class="tab-content">
-        <div class="tab-header">
-            <h3 class="ml-3">Headline 4</h3>
-            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        </div>
-        <div class="content-section implementation">
-            <div class="grid">
-
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Circle</h5>
-                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar label="V" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Badge</h5>
-                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
-                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Circle</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Badge</h5>
-                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
-                        </p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
-                            size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
-                            size="large" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
-                            shape="circle">
-                        </p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Avatar Group</h5>
-                        <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar label="+2" shape="circle" size="large"
-                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                        </p-avatarGroup>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
-                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="content5" class="tab-content">
-        <div class="tab-header">
-            <h3 class="ml-3">Headline 5</h3>
-            <app-demoActions class="mr-3" github="avatar" stackblitz="avatar-demo"></app-demoActions>
-        </div>
-        <div class="content-section implementation">
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Circle</h5>
-                        <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar label="V" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar label="U" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Label - Badge</h5>
-                        <p-avatar label="U" pBadge styleClass="mr-5" value="4" size="xlarge"
-                            [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Circle</h5>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
-                            [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                        <p-avatar icon="pi pi-user" styleClass="mr-2"
-                            [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Icon - Badge</h5>
-                        <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" size="xlarge">
-                        </p-avatar>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image</h5>
-                        <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" styleClass="mr-2"
-                            size="xlarge" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" styleClass="mr-2"
-                            size="large" shape="circle"></p-avatar>
-                        <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" styleClass="mr-2"
-                            shape="circle">
-                        </p-avatar>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Avatar Group</h5>
-                        <p-avatarGroup styleClass="mb-3">
-                            <p-avatar image="assets/showcase/images/demo/avatar/amyelsner.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/asiyajavayant.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/onyamalimba.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/ionibowcher.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar image="assets/showcase/images/demo/avatar/xuxuefeng.png" size="large"
-                                shape="circle">
-                            </p-avatar>
-                            <p-avatar label="+2" shape="circle" size="large"
-                                [style]="{'background-color':'#9c27b0', 'color': '#ffffff'}"></p-avatar>
-                        </p-avatarGroup>
-                    </div>
-                </div>
-                <div class="col-12 md:col-4">
-                    <div class="card">
-                        <h5>Image - Badge</h5>
-                        <p-avatar image="assets/showcase/images/demo/organization/walter.jpg" pBadge value="4"
-                            severity="danger" styleClass="mr-2" size="xlarge"></p-avatar>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-<style>
-    /** No CSS for this example */
-    ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
-        color: red;
-        background-color: green;
-    }
-
-    ::ng-deep .mat-tab-list .mat-tab-labels {
-        color: blue;
-        background-color: yellow;
-    }
-
-    .red-bold {
-        font-weight: bold;
-        color: red;
     }
 </style>
