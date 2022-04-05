@@ -6,7 +6,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SharedModule } from '../../shared/shared.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { ConnectComponent } from './containers/connect/connect.component';
 import { ConnectService } from '../../service/connect.service';
 import { ConnectLeftMenuComponent } from './components/connect-left-menu/connect-left-menu.component';
 import { ConnectHomeComponent } from './components/connect-home/connect-home.component';
@@ -21,6 +20,7 @@ import { TicketPaymentComponent } from './components/ticket-payment/ticket-payme
 import { TicketSummaryComponent } from './components/ticket-summary/ticket-summary.component';
 import { TicketOptionsComponent } from './components/ticket-options/ticket-options.component';
 import { SidenavService } from '../../services/sidenav.service';
+import { ConnectComponent } from './containers/connect/connect.component';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(

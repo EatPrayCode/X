@@ -3,7 +3,7 @@ import { ConnectHistoryComponent } from './components/connect-history/connect-hi
 import { ConnectNewComponent } from './components/connect-new/connect-new.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConnectComponent } from './containers/connect/connect.component';
+import { ConnectComponent } from '../neta/containers/connect/connect.component';
 import { ConnectHomeComponent } from './components/connect-home/connect-home.component';
 import { TicketOptionsComponent } from './components/ticket-options/ticket-options.component';
 import { TicketSummaryComponent } from './components/ticket-summary/ticket-summary.component';

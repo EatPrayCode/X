@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs'
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SidenavService {
 
   // With this subject you can save the sidenav state and consumed later into other pages.

@@ -12,6 +12,8 @@ import { NetaVideosComponent } from './components/neta-videos/neta-videos.compon
 import { NetaOtherComponent } from './components/neta-other/neta-other.component';
 import { NetaNewsComponent } from './components/neta-news/neta-news.component';
 import { SharedModule } from '../../shared/shared.module';
+import { ConnectComponent } from './containers/connect/connect.component';
+import { ConnectLeftMenuComponent } from './containers/connect-left-menu/connect-left-menu.component';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -41,6 +43,8 @@ export function httpLoaderFactory(http: HttpClient) {
     NetaVideosComponent,
     NetaOtherComponent,
     NetaNewsComponent,
+    ConnectComponent,
+    ConnectLeftMenuComponent
   ],
   providers: [NetaService]
 })

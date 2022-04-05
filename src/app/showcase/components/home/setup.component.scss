@@ -1,28 +1,3 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-weight: 200;
-    font-family: helvetica neue, helvetica, arial, sans-serif;
-   -webkit-font-smoothing: antialiased;
- }
- 
- a{color: #000; text-decoration: none;}
- a:hover{color: #000; text-decoration: none;}
- 
- body {
-    background: #fafafa;
- }  
- 
- .container {
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -25%;
-    margin-top: -25px;
- }
- 
  p {
     float: left; 
     line-height: 50px;
