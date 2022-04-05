@@ -1,12 +1,13 @@
-import { ROUTE_ANIMATIONS_ELEMENTS } from './../../../core/animations/route.animations';
+
 import { Router } from '@angular/router';
 import { Component, ChangeDetectionStrategy, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from "@angular/forms";
 import { map } from "highcharts";
 import { Observable, of } from "rxjs";
 import { startWith } from "rxjs/operators";
-import { User, NetasService } from "../../services/netas.service";
-import { DataService } from '../../services/data.service';
+import { ROUTE_ANIMATIONS_ELEMENTS } from 'src/app/showcase/core/core.module';
+import { DataService } from 'src/app/showcase/service/data.service';
+import { User } from 'src/app/showcase/service/netas.service';
 
 @Component({
   selector: 'app-netas-for-you',
@@ -88,7 +89,6 @@ export class NetasForYouComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userService: NetasService,
     private router: Router,
     public dataService: DataService
   ) { }

@@ -1,4 +1,4 @@
-import { NetaService } from './services/neta.service';
+import { NetaService } from '../../service/neta.service';
 import { NetaComponent } from './containers/neta/neta.component';
 import { NetaRoutingModule } from './neta-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';

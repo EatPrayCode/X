@@ -1,6 +1,6 @@
 import { Router, NavigationEnd } from '@angular/router';
 import { AppConfigService } from './../../service/appconfigservice';
-import { AppConfig } from './../../domain/appconfig';
+import { AppConfig } from '../../models/appconfig';
 import { Subscription } from 'rxjs';
 import { PrimeNGConfig, MenuItem, SelectItem, TreeNode, MessageService, SelectItemGroup } from 'primeng/api';
 
@@ -29,7 +29,7 @@ import {
 import { ChooseAppSettingsModalComponent } from './../../core/auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
 import { SigninComponent } from './../../core/auth/components/signin/signin.component';
 import { StateService } from './../../services/state.service';
-import { Country, Customer, Representative } from './../../domain/customer';
+import { Country, Customer, Representative } from './../../models/customer';
 import { CustomerService } from './../../service/customerservice';
 import { NodeService } from './../../service/nodeservice';
 

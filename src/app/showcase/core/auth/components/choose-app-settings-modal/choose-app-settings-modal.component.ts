@@ -4,9 +4,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AppService } from '../../../../services/app.service';
 import { StateService } from '../../../../services/state.service';
-import { DataService } from '../../../../services/data.service';
 import { appSettingsState } from '../../../../mocks/appStateDefault';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core.module';
+import { DataService } from 'src/app/showcase/service/data.service';
 
 export const appSettingsStateFirebaseBangalore: appSettingsState = {
   uid: 'tNxAZbKtgdfxqilfUyivKz0hzDj1',

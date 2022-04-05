@@ -3,7 +3,7 @@ import { trigger, style, transition, animate, AnimationEvent } from '@angular/an
 import { Router, NavigationEnd } from '@angular/router';
 import { AppConfigService } from './../service/appconfigservice';
 import { VersionService } from './../service/versionservice';
-import { AppConfig } from './../domain/appconfig';
+import { AppConfig } from '../models/appconfig';
 import { Subscription } from 'rxjs';
 
 @Component({

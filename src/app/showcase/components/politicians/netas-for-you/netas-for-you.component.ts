@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from "@angular
 import { map } from "highcharts";
 import { Observable, of } from "rxjs";
 import { startWith } from "rxjs/operators";
-import { DataService } from '../../netas/services/data.service';
+import { DataService } from 'src/app/showcase/service/data.service';
 
 @Component({
   selector: 'app-netas-for-you',
