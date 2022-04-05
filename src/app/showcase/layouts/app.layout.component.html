@@ -111,7 +111,6 @@
         </div>
 
         <nav class="mobile-bottom-nav {{config.dark ? 'bottom-nav-dark' : 'bottom-nav-light'}}">
-            <!-- mobile-bottom-nav__item--active -->
             <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]"
                 routerLinkActive="active">
                 <div class="mobile-bottom-nav__item-content">

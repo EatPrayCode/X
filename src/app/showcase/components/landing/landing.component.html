@@ -211,20 +211,22 @@
                 <div class="hero-border-right hidden md:block"></div>
             </div>
 
-            <section
-                class="landing-getstarted flex flex-column md:flex-row align-items-center justify-content-center mt-4 z-1">
+            <section class="landing-getstarted mt-4 z-1">
 
-                <a class="linkbox active font-semibold py-3 px-4 fadeinleft animation-duration-2000 animation-ease-out"
+                <a class="linkbox active font-semibold mr-2 py-3 px-4 fadeinleft animation-duration-2000 animation-ease-out"
                     [routerLink]="'home'">
                     Get Started
                     <i class="pi pi-arrow-right ml-3"></i>
                 </a>
 
                 <div
-                    class="box download-box font-medium p-3 px-4 mt- md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center fadeinright animation-duration-2000 animation-ease-out">
+                    class="box download-box font-medium ml-2 p-3 px-4 mt- md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center fadeinright animation-duration-2000 animation-ease-out">
                     <i class="download-icon pi pi-download mr-3"></i>
-                    <span class="font-bold" :style="{fontFamily:'monaco'}" [routerLink]="'netas'">Explore</span>
+                    <span class="font-bold" :style="{fontFamily:'monaco'}" [routerLink]="'netas'">
+                        Explore
+                    </span>
                 </div>
+
             </section>
 
             <div class="hero-bg absolute top-0 left-0 right-0 bottom-0 z-0">
@@ -232,10 +234,6 @@
                 <div class="hero-strip-left"></div>
             </div>
         </section>
-    </div>
-
-    <div class="">
-        <app-footer></app-footer>
     </div>
 
 </div>
