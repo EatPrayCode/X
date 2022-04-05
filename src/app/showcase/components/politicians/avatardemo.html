@@ -1,18 +1,116 @@
+<mat-menu #menu="matMenu">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Company (disabled)</mat-label>
+      <input matInput disabled value="Google">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Long Last Name That Will Be Truncated</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address 2</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </p>
+  </form>
+</mat-menu>
+
 <mat-tab-group>
-    <mat-tab label="First">
-        <app-netas-for-you></app-netas-for-you>
-    </mat-tab>
-    <mat-tab label="Second">
-        <app-netas-for-you></app-netas-for-you>
-    </mat-tab>
-    <mat-tab label="Third">
-        <app-netas-for-you></app-netas-for-you>
-    </mat-tab>
+  <mat-tab label="First">
+
+    <div class="">
+      <span class="sub-header">Netas for you</span>
+      <div class="search-box mat-elevation-z4">
+        <button mat-button mat-icon-button (click)="OnSearch()" matTooltip="Search">
+          <mat-icon>search</mat-icon>
+        </button>
+
+        <mat-form-field class="form-field" [floatLabel]="'never'">
+          <input matInput type="text" placeholder="Search" [(ngModel)]="value" (keyup.enter)="OnSearch()" />
+        </mat-form-field>
+
+        <!-- <button mat-button mat-icon-button (click)="OnSearchPrevious()" matTooltip="Anterior">
+          <mat-icon>keyboard_arrow_up</mat-icon>
+        </button> -->
+
+        <button mat-button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Siguiente">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+
+        <button mat-button mat-icon-button (click)="OnClear()" matTooltip="Borrar búsqueda">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <!-- <button mat-button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Siguiente">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button> -->
+
+        <!--
+        <button mat-button mat-icon-button (click)="OnSearchPrevious()" *ngIf="value"
+          matTooltip="Anterior">
+          <mat-icon>keyboard_arrow_up</mat-icon>
+        </button>
+        
+        <button mat-button mat-icon-button (click)="OnSearchNext()" *ngIf="value"
+          matTooltip="Siguiente">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        
+        <button mat-button mat-icon-button (click)="OnClear()" *ngIf="value"
+          matTooltip="Cancelar búsqueda">
+          <mat-icon>clear</mat-icon>
+        </button>
+        -->
+      </div>
+    </div>
+
+    <app-netas-for-you></app-netas-for-you>
+  </mat-tab>
+  <mat-tab label="Second">
+    <app-netas-for-you></app-netas-for-you>
+  </mat-tab>
+  <mat-tab label="Third">
+    <app-netas-for-you></app-netas-for-you>
+  </mat-tab>
 </mat-tab-group>
 
 <style>
-    .tab-header {
-        display: flex;
-        justify-content: space-between;
-    }
+  .tab-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .form-field {
+    flex: 1 auto;
+  }
+
+  .sub-header{
+    padding-left: 1rem;
+  }
 </style>

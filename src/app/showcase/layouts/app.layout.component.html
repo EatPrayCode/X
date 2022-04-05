@@ -110,10 +110,10 @@
             <router-outlet></router-outlet>
         </div>
 
-        <nav class="mobile-bottom-nav">
+        <nav class="mobile-bottom-nav {{config.dark ? 'bottom-nav-dark' : 'bottom-nav-light'}}">
             <!-- mobile-bottom-nav__item--active -->
             <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]"
-                routerLinkActive="mobile-bottom-nav__item--active">
+                routerLinkActive="active">
                 <div class="mobile-bottom-nav__item-content">
                     <i class="material-icons">{{item.icon}}</i>
                     <span>{{item.label | translate}}</span>
