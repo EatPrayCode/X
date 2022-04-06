@@ -44,13 +44,6 @@
                                 <span>Settings</span>
                             </a>
                         </li>
-
-                        <p-overlayPanel #op>
-                            <ng-template pTemplate>
-                                Hi
-                            </ng-template>
-                        </p-overlayPanel>
-
                     </ol>
                 </nav>
 
@@ -101,16 +94,6 @@
                     </form> -->
                 </mat-menu>
 
-                <button *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
-                    [matMenuTriggerFor]="menu" matTooltip="">
-                    <mat-icon>keyboard_arrow_down</mat-icon>
-                </button>
-
-                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
-                    (click)="openLoginDialog()" matTooltip="">
-                    <mat-icon>power_settings_new</mat-icon>
-                </button>
-
                 <a *ngIf="language$ | async as language" class="">
                     {{language.toUpperCase()}}
                 </a>
@@ -122,6 +105,16 @@
                         </mat-option>
                     </mat-select>
                 </span>
+
+                <button class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 mr-2 menu-button" *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    [matMenuTriggerFor]="menu" matTooltip="">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+
+                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    (click)="openLoginDialog()" matTooltip="">
+                    <mat-icon>power_settings_new</mat-icon>
+                </button>
 
                 <button type="button"
                     class="linkbox header-button inline-flex align-items-center justify-content-center"
