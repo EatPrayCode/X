@@ -69,7 +69,7 @@ export class NetasComponent implements OnInit {
   }
 
   onSequenceChangeEvent(event: MatTabChangeEvent) {
-    console.log(event.index);
+    // console.log(event.index);
     let link: any = this.mainMenuItems[event.index].link;
     let currentUrl: any = `/netas/${link}`;
     this.router.navigate([currentUrl]);

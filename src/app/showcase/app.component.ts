@@ -11,33 +11,32 @@ import { StateService } from './services/state.service';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-
-  initAuth(): void {
-    this.stateService.appSettingsSubject.subscribe(res => {
-      console.log(res);
-    });
-    this.stateService.getAppUser().subscribe();
-  }
-
     constructor(
         public stateService: StateService,
-        private configService: AppConfigService, 
+        private configService: AppConfigService,
         private primengConfig: PrimeNGConfig
-        ) {}
-       
+    ) { }
+
     config: AppConfig;
 
     public subscription: Subscription;
 
     ngOnInit() {
         this.initAuth();
-        this.config = {theme: 'lara-light-blue', dark: false}
+        this.config = { theme: 'lara-light-blue', dark: false }
 
-        this.subscription = this.configService.configUpdate$.subscribe( config => {
+        this.subscription = this.configService.configUpdate$.subscribe(config => {
             const linkElement = document.getElementById('theme-link');
             this.replaceLink(linkElement, config.theme);
             this.config = config;
         });
+    }
+
+    initAuth(): void {
+        this.stateService.appSettingsSubject.subscribe(res => {
+            console.log(res);
+        });
+        this.stateService.getAppUser().subscribe();
     }
 
     replaceLink(linkElement, theme) {

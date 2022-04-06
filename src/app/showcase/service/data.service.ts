@@ -121,7 +121,7 @@ export class DataService {
 				});
 			}),
 			tap((res: any) => {
-				console.log(res);
+				// console.log(res);
 			})
 		);
 	}
@@ -155,7 +155,7 @@ export class DataService {
 					});
 				}),
 				tap((res: any) => {
-					console.log(res);
+					// console.log(res);
 				}));
 	}
 
@@ -180,7 +180,7 @@ export class DataService {
 				});
 			}),
 			tap((res: any) => {
-				console.log(res);
+				// console.log(res);
 			})
 		);
 	}
@@ -195,7 +195,7 @@ export class DataService {
 				});
 			}),
 			tap((res: any) => {
-				console.log(res);
+				// console.log(res);
 			})
 		);
 	}

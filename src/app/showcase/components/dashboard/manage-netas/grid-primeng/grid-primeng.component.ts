@@ -31,7 +31,7 @@ export class GridPrimengComponent implements OnInit, OnChanges {
     if (value && value?.data) {
       this.data = [...(value?.data)];
     }
-    console.log(this.data);
+    // console.log(this.data);
     // this.zone.run(() => this.data = [...value])
   }
 
