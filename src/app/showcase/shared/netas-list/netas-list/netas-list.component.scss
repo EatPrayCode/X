@@ -1,14 +1,4 @@
-main {
-  background: rgb(204, 127, 79);
-  background: linear-gradient(235deg, rgba(204, 127, 79, 1) 0%, rgba(237, 188, 107, 1) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .card {
-  // width: 300px;
-  aspect-ratio: 1;
   background: #fff;
   border-radius: 3px;
   display: flex;
@@ -41,7 +31,8 @@ main {
     }
 
     .card-btn {
-      padding-top: 5px;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
       gap: 10px;
 
       button {
