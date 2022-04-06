@@ -4,29 +4,29 @@
 
             <mat-card class="home-card">
                 <mat-card-content class="home-card-content">
-                  <img mat-card-image
-                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                    alt="Photo of a Shiba Inu">
-                  <div>
-                    <div>Second</div>
-                    <div>Third</div>
-                    <div>Fourth</div>
-                  </div>
+                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                        alt="Photo of a Shiba Inu">
+                    <div>
+                        <div>Second</div>
+                        <div>Third</div>
+                        <div>Fourth</div>
+                    </div>
                 </mat-card-content>
             </mat-card>
 
             <mat-card style="margin-top: 10px;" class="">
-                <mat-card-header>
+                <mat-card-header class="mat-card-header-neta">
                     <mat-card-title>Neta Name </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <p>
-                        A long description saying lot of things and can span lines A long description saying lot of things and can span lines A long description saying lot of things and can span lines
+                        A long description saying lot of things and can span lines A long description saying lot of
+                        things and can span lines A long description saying lot of things and can span lines
                     </p>
                 </mat-card-content>
 
             </mat-card>
-            
+
             <button mat-raised-button style="margin-bottom: 10px;" class="my-class">Connect</button>
 
             <app-connect [mainMenuItems]="tabsList" (selectTabEvt)="handleClickTabItem($event)"></app-connect>

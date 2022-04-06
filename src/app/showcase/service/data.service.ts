@@ -106,7 +106,7 @@ export class DataService {
 				});
 			}),
 			tap((res: any) => {
-				console.log(res);
+				// console.log(res);
 			})
 		);
 	}
