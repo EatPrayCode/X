@@ -12,7 +12,7 @@
             <app-connect-left-menu [menuItems]="mainMenuItems" (selectNetaEvt)="handleSelectNeta($event)"></app-connect-left-menu>
         </mat-sidenav>
         <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-            <div class="main_content">
+            <div class="main_content mat-elevation-z4">
                 <router-outlet></router-outlet>
             </div>
         </mat-sidenav-content>
