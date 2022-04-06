@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { ActivatedRoute, Router, RouterLinkActive, Routes } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { routeAnimations, ROUTE_ANIMATIONS_ELEMENTS } from 'src/app/showcase/core/core.module';
@@ -83,11 +84,13 @@ export class NetasComponent implements OnInit {
   }
 
   isLinkActive(rla: RouterLinkActive): boolean {
-    const routerLink = rla.linksWithHrefs.first;
-
-    // return this.router.isActive(routerLink.urlTree, false);
-    return false;
+    return true;
   }
+
+  onSequenceChangeEvent(event: MatTabChangeEvent) {
+    console.log(event.tab);
+  }
+  
 
   value = '';
 
