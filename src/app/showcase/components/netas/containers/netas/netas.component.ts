@@ -75,34 +75,32 @@ export class NetasComponent implements OnInit {
     this.router.navigate([currentUrl]);
   }
 
-  HELPERS: any[] =
-    [
-      {
-        id: '0',
-        name: 'Name',
-        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
-        designation: 'Chief',
-        abbr: 'TO',
-        description: 'testing data'
-      },
-      {
-        id: '1',
-        name: 'Email',
-        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
-        designation: 'Chief',
-        abbr: 'TO',
-        description: 'testing data'
-      },
-      {
-        id: '2',
-        name: 'Type',
-        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
-        designation: 'Chief',
-        abbr: 'TO',
-        description: 'testing data'
-      },
-      // few more items
-    ];
+  HELPERS: any[] = [
+    {
+      id: '0',
+      name: 'Name',
+      image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+      designation: 'Chief',
+      abbr: 'TO',
+      description: 'testing data'
+    },
+    {
+      id: '1',
+      name: 'Email',
+      image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+      designation: 'Chief',
+      abbr: 'TO',
+      description: 'testing data'
+    },
+    {
+      id: '2',
+      name: 'Type',
+      image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+      designation: 'Chief',
+      abbr: 'TO',
+      description: 'testing data'
+    }
+  ];
 
   value = '';
 

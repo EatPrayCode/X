@@ -55,14 +55,14 @@
                 </nav>
 
                 <mat-menu #menu="matMenu">
-                    <mat-list>
+                    <mat-list style="min-width: 15rem;">
                         <mat-list-item *ngFor="let helper of HELPERS">
                             <img matListAvatar src="{{helper.image}} " alt="...">
                             <h3 matLine> {{helper.name}} </h3>
-                            <p matLine>
-                                <!-- <span> {{helper.abbr}} </span> -->
-                                <!-- <span class="demo-2"> -- {{helper.description}} </span> -->
-                            </p>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <img matListAvatar src="https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1" alt="...">
+                            <h3 matLine (click)="onLogoutClick()"> Logout </h3>
                         </mat-list-item>
                     </mat-list>
                     <!-- <form class="example-form">
@@ -101,11 +101,13 @@
                     </form> -->
                 </mat-menu>
 
-                <button *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="">
+                <button *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    [matMenuTriggerFor]="menu" matTooltip="">
                     <mat-icon>keyboard_arrow_down</mat-icon>
                 </button>
 
-                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button (click)="openLoginDialog()" matTooltip="">
+                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    (click)="openLoginDialog()" matTooltip="">
                     <mat-icon>power_settings_new</mat-icon>
                 </button>
 
