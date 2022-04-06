@@ -1,5 +1,15 @@
 <mat-menu #menu="matMenu">
-  <form class="example-form">
+  <mat-list>     
+    <mat-list-item *ngFor="let helper of HELPERS">
+      <img matListAvatar src="{{helper.image}} " alt="...">
+      <h3 matLine> {{helper.name}} </h3>
+      <p matLine>
+        <!-- <span> {{helper.abbr}} </span> -->
+        <!-- <span class="demo-2"> -- {{helper.description}} </span> -->
+      </p>
+    </mat-list-item> 
+   </mat-list>
+  <!-- <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Company (disabled)</mat-label>
       <input matInput disabled value="Google">
@@ -32,7 +42,7 @@
         <textarea matInput></textarea>
       </mat-form-field>
     </p>
-  </form>
+  </form> -->
 </mat-menu>
 
 <style>

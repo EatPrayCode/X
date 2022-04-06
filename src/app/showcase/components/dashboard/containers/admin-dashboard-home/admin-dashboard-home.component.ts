@@ -54,12 +54,26 @@ export class AdminDashboardHomeComponent implements OnInit {
     this.selectedType = item;
   }
 
+  HELPERS: any[] =
+    [
+      {
+        id: '0',
+        name: 'Joan',
+        image: '/assets/images/img.png',
+        designation: 'Chief',
+        abbr: 'TO',
+        description: 'testing data'
+      },
+      // few more items
+    ];
+
+
   onSequenceChangeEvent(event: MatTabChangeEvent) {
     let link: any = this.mainMenuItems[event.index].link;
     let currentUrl: any = `/dashboard/${link}`;
     this.router.navigate([currentUrl]);
   }
-  
+
 
   ngOnInit() {
     this.isAuthenticated$ = of(true);
@@ -101,7 +115,7 @@ export class AdminDashboardHomeComponent implements OnInit {
   scrollableTabs: any[] = Array.from({ length: 50 }, (_, i) => ({ title: `Tab ${i + 1}`, content: `Tab ${i + 1} Content` }));
 
   OnSearch() {
-      console.log("OnSearch", this.value);
+    console.log("OnSearch", this.value);
   }
 
   OnSearchNext() {
