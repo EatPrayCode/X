@@ -97,6 +97,35 @@ export class AppLayoutComponent implements OnInit, AfterViewInit {
     this.newsActive = this.newsActive && this.isNewsStorageExpired();
   }
 
+  HELPERS: any[] =
+    [
+      {
+        id: '0',
+        name: 'Name',
+        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+        designation: 'Chief',
+        abbr: 'TO',
+        description: 'testing data'
+      },
+      {
+        id: '1',
+        name: 'Email',
+        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+        designation: 'Chief',
+        abbr: 'TO',
+        description: 'testing data'
+      },
+      {
+        id: '2',
+        name: 'Type',
+        image: 'https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1',
+        designation: 'Chief',
+        abbr: 'TO',
+        description: 'testing data'
+      },
+      // few more items
+    ];
+
   show() {
     this.ref = this.dialogService.open(SigninComponent, {
       header: 'Choose a Product',
@@ -371,7 +400,7 @@ export class AppLayoutComponent implements OnInit, AfterViewInit {
   selectedCity: City;
 
   groupedCities: SelectItemGroup[];
-    
+
   cities: City[];
 
   countries: Country[];
@@ -500,55 +529,55 @@ export class AppLayoutComponent implements OnInit, AfterViewInit {
     ];
 
     this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' }
+    ];
 
-  this.countries = [
-      {name: 'Australia', code: 'AU'},
-      {name: 'Brazil', code: 'BR'},
-      {name: 'China', code: 'CN'},
-      {name: 'Egypt', code: 'EG'},
-      {name: 'France', code: 'FR'},
-      {name: 'Germany', code: 'DE'},
-      {name: 'India', code: 'IN'},
-      {name: 'Japan', code: 'JP'},
-      {name: 'Spain', code: 'ES'},
-      {name: 'United States', code: 'US'}
-  ];
+    this.countries = [
+      { name: 'Australia', code: 'AU' },
+      { name: 'Brazil', code: 'BR' },
+      { name: 'China', code: 'CN' },
+      { name: 'Egypt', code: 'EG' },
+      { name: 'France', code: 'FR' },
+      { name: 'Germany', code: 'DE' },
+      { name: 'India', code: 'IN' },
+      { name: 'Japan', code: 'JP' },
+      { name: 'Spain', code: 'ES' },
+      { name: 'United States', code: 'US' }
+    ];
 
-  this.groupedCities = [
+    this.groupedCities = [
       {
-          label: 'Germany', value: 'de', 
-          items: [
-              {label: 'Berlin', value: 'Berlin'},
-              {label: 'Frankfurt', value: 'Frankfurt'},
-              {label: 'Hamburg', value: 'Hamburg'},
-              {label: 'Munich', value: 'Munich'}
-          ]
+        label: 'Germany', value: 'de',
+        items: [
+          { label: 'Berlin', value: 'Berlin' },
+          { label: 'Frankfurt', value: 'Frankfurt' },
+          { label: 'Hamburg', value: 'Hamburg' },
+          { label: 'Munich', value: 'Munich' }
+        ]
       },
       {
-          label: 'USA', value: 'us', 
-          items: [
-              {label: 'Chicago', value: 'Chicago'},
-              {label: 'Los Angeles', value: 'Los Angeles'},
-              {label: 'New York', value: 'New York'},
-              {label: 'San Francisco', value: 'San Francisco'}
-          ]
+        label: 'USA', value: 'us',
+        items: [
+          { label: 'Chicago', value: 'Chicago' },
+          { label: 'Los Angeles', value: 'Los Angeles' },
+          { label: 'New York', value: 'New York' },
+          { label: 'San Francisco', value: 'San Francisco' }
+        ]
       },
       {
-          label: 'Japan', value: 'jp', 
-          items: [
-              {label: 'Kyoto', value: 'Kyoto'},
-              {label: 'Osaka', value: 'Osaka'},
-              {label: 'Tokyo', value: 'Tokyo'},
-              {label: 'Yokohama', value: 'Yokohama'}
-          ]
+        label: 'Japan', value: 'jp',
+        items: [
+          { label: 'Kyoto', value: 'Kyoto' },
+          { label: 'Osaka', value: 'Osaka' },
+          { label: 'Tokyo', value: 'Tokyo' },
+          { label: 'Yokohama', value: 'Yokohama' }
+        ]
       }
-  ];
+    ];
 
 
     this.bindScrollListener();

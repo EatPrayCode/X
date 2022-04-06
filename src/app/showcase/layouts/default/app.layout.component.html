@@ -54,21 +54,66 @@
                     </ol>
                 </nav>
 
-                <a *ngIf="(stateService.appSettingsSubject | async)?.uid" (click)="userop.toggle($event)" class="mr-2">
-                    User
-                </a>
+                <mat-menu #menu="matMenu">
+                    <mat-list>
+                        <mat-list-item *ngFor="let helper of HELPERS">
+                            <img matListAvatar src="{{helper.image}} " alt="...">
+                            <h3 matLine> {{helper.name}} </h3>
+                            <p matLine>
+                                <!-- <span> {{helper.abbr}} </span> -->
+                                <!-- <span class="demo-2"> -- {{helper.description}} </span> -->
+                            </p>
+                        </mat-list-item>
+                    </mat-list>
+                    <!-- <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Company (disabled)</mat-label>
+                        <input matInput disabled value="Google">
+                      </mat-form-field>
+                  
+                      <table class="example-full-width" cellspacing="0">
+                        <tr>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>First name</mat-label>
+                              <input matInput>
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Long Last Name That Will Be Truncated</mat-label>
+                              <input matInput>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                      </table>
+                  
+                      <p>
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Address</mat-label>
+                          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Address 2</mat-label>
+                          <textarea matInput></textarea>
+                        </mat-form-field>
+                      </p>
+                    </form> -->
+                </mat-menu>
 
-                <a *ngIf="!(stateService.appSettingsSubject | async)?.uid" (click)="openLoginDialog()"
-                    rel="noopener noreferrer"
-                    class="linkbox p-0 header-button mr-2 flex align-items-center justify-content-center flex-shrink-0">
-                    <i class="pi pi-github"></i>
-                </a>
+                <button *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
 
-                <a *ngIf="language$ | async as language" class="ml-2">
+                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button (click)="openLoginDialog()" matTooltip="">
+                    <mat-icon>power_settings_new</mat-icon>
+                </button>
+
+                <a *ngIf="language$ | async as language" class="">
                     {{language.toUpperCase()}}
                 </a>
 
-                <span *ngIf="language$ | async as language" class="mr-2">
+                <span *ngIf="language$ | async as language" class="">
                     <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
                         <mat-option *ngFor="let l of languages" [value]="l">
                             {{ l.toUpperCase() }}
