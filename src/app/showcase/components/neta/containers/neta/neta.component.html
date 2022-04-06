@@ -29,7 +29,7 @@
             
             <button mat-raised-button style="margin-bottom: 10px;" class="my-class">Connect</button>
 
-            <app-connect></app-connect>
+            <app-connect [mainMenuItems]="tabsList" (selectTabEvt)="handleClickTabItem($event)"></app-connect>
         </div>
     </div>
 </div>

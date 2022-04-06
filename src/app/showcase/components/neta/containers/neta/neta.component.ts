@@ -18,10 +18,10 @@ export class NetaComponent implements OnInit {
   selectedType: any;
 
   tabsList = [
-    { name: 'home', link: '/home', label: 'app.menu.neta-basic-info', id: 'basic-info' },
-    { name: 'videos', link: '/videos', label: 'app.menu.neta-video-content', id: 'video-content' },
-    { name: 'news', link: '/news', label: 'app.menu.neta-in-the-news', id: 'the-news' },
-    { name: 'other', link: '/other', label: 'app.menu.neta-other', id: 'other' },
+    { name: 'Home', link: '/home', label: 'app.menu.neta-basic-info', id: 'basic-info' },
+    { name: 'Videos', link: '/videos', label: 'app.menu.neta-video-content', id: 'video-content' },
+    { name: 'News', link: '/news', label: 'app.menu.neta-in-the-news', id: 'the-news' },
+    { name: 'Other', link: '/other', label: 'app.menu.neta-other', id: 'other' },
   ];
 
   labelName: any = '';
