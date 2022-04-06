@@ -30,25 +30,25 @@ export class NetasComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   mainMenuItems: any = [
     {
-      id: '/netas/netas-for-you',
-      link: '/netas/netas-for-you',
+      id: 'netas-for-you',
+      link: 'netas-for-you',
       name: 'For you',
       label: 'You'
     },
     {
-      id: '/netas/netas-top',
-      link: '/netas/netas-top',
+      id: 'netas-top',
+      link: 'netas-top',
       name: 'Top',
       label: 'Top'
     },
     {
-      id: '/netas/netas-by-state',
-      link: '/netas/netas-by-state',
+      id: 'netas-by-state',
+      link: 'netas-by-state',
       name: 'State',
       label: 'State'
     },
     {
-      link: '/netas/netas-national',
+      link: 'netas-national',
       name: 'National',
       label: 'National'
     },
@@ -61,11 +61,6 @@ export class NetasComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated$ = of(true);
-    this.navLinks = (
-      this.route.routeConfig && this.route.routeConfig.children ?
-        this.buildNavItems(this.route.routeConfig.children) :
-        []
-    );
   }
 
   ngAfterViewInit() {
@@ -73,22 +68,11 @@ export class NetasComponent implements OnInit {
     this.changeDetector.detectChanges();
   }
 
-  buildNavItems(routes: Routes) {
-    return (routes)
-      .filter(route => route.data)
-      .map(({ path = '', data }) => ({
-        path: path,
-        label: data.label,
-        icon: data.icon
-      }));
-  }
-
-  isLinkActive(rla: RouterLinkActive): boolean {
-    return true;
-  }
-
   onSequenceChangeEvent(event: MatTabChangeEvent) {
-    console.log(event.tab);
+    console.log(event.index);
+    let link: any = this.mainMenuItems[event.index].link;
+    let currentUrl: any = `/netas/${link}`;
+    this.router.navigate([currentUrl]);
   }
   
 

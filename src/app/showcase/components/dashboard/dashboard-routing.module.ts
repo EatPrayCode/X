@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'connect-new',
+        redirectTo: 'connect-home',
         pathMatch: 'full'
       },
       {
@@ -65,11 +65,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
         path: 'states',
         loadChildren: () =>
           import('./states/states.module').then((m) => m.StatesModule),
@@ -81,10 +76,10 @@ const routes: Routes = [
           import('./manage-netas/app.module').then((m) => m.PrimeTableModule),
         data: { title: 'app.connect.menu.connect-new' },
       },
-      {
-        path: 'home',
-        component: ConnectComponent
-      }
+      // {
+      //   path: 'home',
+      //   component: ConnectComponent
+      // }
     
     ]
   }

@@ -1,3 +1,4 @@
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router, RouterLinkActive, Routes } from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -30,32 +31,19 @@ export class AdminDashboardHomeComponent implements OnInit {
   mainMenuItems: any = [
     {
       id: 'Home',
-      link: '/dashboard/connect-home',
+      link: 'connect-home',
       name: 'Home',
       label: 'app.connect.menu.home'
     },
     {
-      id: 'history',
-      link: '/dashboard/connect-history',
-      name: 'History',
-      label: 'app.connect.menu.history'
-    },
-    {
-      id: 'new',
-      link: '/dashboard/connect-new',
-      name: 'New', 
-      label:
-        'app.connect.menu.new'
-    },
-    {
       id: 'States',
-      link: '/dashboard/states',
+      link: 'states',
       name: 'States',
       label: 'app.connect.menu.home'
     },
     {
       id: 'Netas',
-      link: '/dashboard/manage-netas',
+      link: 'manage-netas',
       name: 'Netas',
       label: 'app.connect.menu.history'
     }
@@ -65,6 +53,13 @@ export class AdminDashboardHomeComponent implements OnInit {
   handleClickMainMenuItem(item: any) {
     this.selectedType = item;
   }
+
+  onSequenceChangeEvent(event: MatTabChangeEvent) {
+    let link: any = this.mainMenuItems[event.index].link;
+    let currentUrl: any = `/dashboard/${link}`;
+    this.router.navigate([currentUrl]);
+  }
+  
 
   ngOnInit() {
     this.isAuthenticated$ = of(true);
