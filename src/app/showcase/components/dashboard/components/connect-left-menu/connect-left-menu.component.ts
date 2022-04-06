@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { SidenavService } from 'src/app/showcase/services/sidenav.service';
-import { onSideNavChange, animateText } from '../../animations/animations';
+import { onSideNavChange, animateText } from '../../../../animations/animations';
 
 interface Page {
   link: string;

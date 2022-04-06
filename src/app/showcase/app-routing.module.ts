@@ -1,19 +1,31 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './components/landing/landing.component';
-import { AppLayoutComponent } from './layouts/app.layout.component';
+import { AppLayoutComponent } from './layouts/default/app.layout.component';
 import { AdminGuardService } from './core/auth/guards/admin.guard';
 import { AppProtectedResolver } from './services/app.protected.resolver';
+import { BlankComponent } from './layouts/blank/blank.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: LandingComponent, pathMatch: 'full' },
+            {
+                path: '',
+                component: LandingComponent,
+                pathMatch: 'full'
+            },
             {
                 path: '', component: AppLayoutComponent,
                 children: [
-                    { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'netas', loadChildren: () => import('./components/netas/netas.module').then(m => m.NetasModule) },
+                    {
+                        path: '',
+                        redirectTo: 'home',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'netas',
+                        loadChildren: () => import('./components/netas/netas.module').then(m => m.NetasModule)
+                    },
                     {
                         path: 'dashboard',
                         loadChildren: () =>
@@ -39,7 +51,16 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
                                 (m) => m.SettingsModule
                             )
                     },
-                    { path: 'home', loadChildren: () => import('./components/home/setup.module').then(m => m.SetupModule) },
+                    {
+                        path: 'home',
+                        loadChildren: () => import('./components/home/setup.module').then(m => m.SetupModule)
+                    },
+                ],
+            },
+            {
+                path: '',
+                component: BlankComponent,
+                children: [
                     {
                         path: ':id',
                         loadChildren: () =>

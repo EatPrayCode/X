@@ -109,17 +109,7 @@
         <div class="layout-content-inner h-full">
             <router-outlet></router-outlet>
         </div>
-
-        <nav class="mobile-bottom-nav {{config.dark ? 'bottom-nav-dark' : 'bottom-nav-light'}}">
-            <div class="mobile-bottom-nav__item " *ngFor="let item of navigation" [routerLink]="[item.link]"
-                routerLinkActive="active">
-                <div class="mobile-bottom-nav__item-content">
-                    <i class="material-icons">{{item.icon}}</i>
-                    <span>{{item.label | translate}}</span>
-                </div>
-            </div>
-        </nav>
-
+        
         <app-footer></app-footer>
     </div>
 

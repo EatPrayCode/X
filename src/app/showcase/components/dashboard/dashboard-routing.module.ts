@@ -1,18 +1,15 @@
-import { TicketInfoComponent } from './components/ticket-info/ticket-info.component';
 import { ConnectHistoryComponent } from './components/connect-history/connect-history.component';
 import { ConnectNewComponent } from './components/connect-new/connect-new.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ConnectComponent } from '../neta/containers/connect/connect.component';
 import { ConnectHomeComponent } from './components/connect-home/connect-home.component';
-import { TicketOptionsComponent } from './components/ticket-options/ticket-options.component';
-import { TicketSummaryComponent } from './components/ticket-summary/ticket-summary.component';
 import { AdminDashboardHomeComponent } from './containers/admin-dashboard-home/admin-dashboard-home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ConnectComponent,
+    component: AdminDashboardHomeComponent,
     children: [
       {
         path: '',
@@ -86,7 +83,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: AdminDashboardHomeComponent
+        component: ConnectComponent
       }
     
     ]

@@ -44,10 +44,11 @@ import { AppFooterComponent } from './layouts/app.footer.component';
 import { BadgeModule } from 'primeng/badge';
 import { LandingComponent } from './components/landing/landing.component';
 import { CoreModule } from './core/core.module';
-import { AppLayoutComponent } from './layouts/app.layout.component';
+import { AppLayoutComponent } from './layouts/default/app.layout.component';
 import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
 import { AppDemoActionsModule } from './shared/app.demoactions.component';
+import { BlankComponent } from './layouts/blank/blank.component';
 
 @NgModule({
     declarations: [
@@ -56,6 +57,7 @@ import { AppDemoActionsModule } from './shared/app.demoactions.component';
         AppFooterComponent,
         LandingComponent,
         AppLayoutComponent,
+        BlankComponent,
     ],
     imports: [
         FormsModule,

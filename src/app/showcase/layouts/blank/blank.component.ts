@@ -1,6 +1,6 @@
 import { Router, NavigationEnd } from '@angular/router';
-import { AppConfigService } from './../service/appconfigservice';
-import { AppConfig } from '../models/appconfig';
+import { AppConfigService } from './../../service/appconfigservice';
+import { AppConfig } from './../../models/appconfig';
 import { Subscription } from 'rxjs';
 import { PrimeNGConfig, MenuItem, SelectItem, TreeNode, MessageService, SelectItemGroup } from 'primeng/api';
 
@@ -11,8 +11,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 
-import { environment as env } from '../../../environments/environment';
-
+import { environment as env } from '../../../../environments/environment';
 
 import {
   routeAnimations,
@@ -21,23 +20,21 @@ import {
   selectSettingsLanguage,
   selectEffectiveTheme,
   AppState
-} from './../core/core.module';
+} from './../../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
-} from './../core/settings/settings.actions';
-import { ChooseAppSettingsModalComponent } from './../core/auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
-import { SigninComponent } from './../core/auth/components/signin/signin.component';
-import { StateService } from './../services/state.service';
-import { Country, Customer, Representative } from './../models/customer';
-import { CustomerService } from './../service/customerservice';
-import { NodeService } from './../service/nodeservice';
+} from './../../core/settings/settings.actions';
+import { ChooseAppSettingsModalComponent } from './../../core/auth/components/choose-app-settings-modal/choose-app-settings-modal.component';
+import { SigninComponent } from './../../core/auth/components/signin/signin.component';
+import { Country, Customer, Representative } from './../../models/customer';
+import { CustomerService } from './../../service/customerservice';
+import { NodeService } from './../../service/nodeservice';
 
 import { DynamicDialogRef, DialogService } from 'primeng/dynamicdialog';
-
+import { StateService } from '../../services/state.service';
 
 declare let gtag: Function;
-
 
 interface City {
   name: string;
@@ -45,48 +42,18 @@ interface City {
 }
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './app.layout.component.html',
-  styleUrls: ['./app.layout.component.scss']
+  selector: 'blank',
+  templateUrl: './blank.component.html',
+  styleUrls: ['./blank.component.scss']
 })
-export class AppLayoutComponent implements OnInit {
+export class BlankComponent implements OnInit {
+
   menuActive: boolean;
-
   newsActive: boolean = true;
-
-  // config: AppConfig;
-
   news_key = 'primenews';
-
-  // theme: string = "lara-light-blue";
-
   public subscription: Subscription;
-
   activeMenuIndex: number;
-
-
   ref: DynamicDialogRef;
-
-  show() {
-    this.ref = this.dialogService.open(SigninComponent, {
-      header: 'Choose a Product',
-      width: '70%',
-      contentStyle: { "max-height": "500px", "overflow": "auto" },
-      baseZIndex: 10000
-    });
-
-    this.ref.onClose.subscribe((product: any) => {
-      if (product) {
-        this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: product.name });
-      }
-    });
-  }
-
-  toggleMenu(event: Event, index: number) {
-    this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
-    event.preventDefault();
-  }
-
   versions: any[];
 
   constructor(
@@ -127,6 +94,26 @@ export class AppLayoutComponent implements OnInit {
     });
 
     this.newsActive = this.newsActive && this.isNewsStorageExpired();
+  }
+
+  show() {
+    this.ref = this.dialogService.open(SigninComponent, {
+      header: 'Choose a Product',
+      width: '70%',
+      contentStyle: { "max-height": "500px", "overflow": "auto" },
+      baseZIndex: 10000
+    });
+
+    this.ref.onClose.subscribe((product: any) => {
+      if (product) {
+        this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: product.name });
+      }
+    });
+  }
+
+  toggleMenu(event: Event, index: number) {
+    this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
+    event.preventDefault();
   }
 
   onMenuButtonClick() {
@@ -259,7 +246,7 @@ export class AppLayoutComponent implements OnInit {
 
   OninitCore(): void {
     this.storageService.testLocalStorage();
-    if (AppLayoutComponent.isIEorEdgeOrSafari()) {
+    if (BlankComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         actionSettingsChangeAnimationsPageDisabled({
           pageAnimationsDisabled: true
@@ -696,3 +683,4 @@ export class AppLayoutComponent implements OnInit {
     }
   }
 }
+

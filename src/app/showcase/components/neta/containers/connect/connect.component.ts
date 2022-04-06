@@ -1,4 +1,4 @@
-import { onMainContentChange } from '../../../dashboard/animations/animations';
+import { onMainContentChange } from '../../../../animations/animations';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
