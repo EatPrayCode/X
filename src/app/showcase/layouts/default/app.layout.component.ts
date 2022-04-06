@@ -1,3 +1,4 @@
+import { AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AppConfigService } from './../../service/appconfigservice';
 import { AppConfig } from './../../models/appconfig';
@@ -46,7 +47,7 @@ interface City {
   templateUrl: './app.layout.component.html',
   styleUrls: ['./app.layout.component.scss']
 })
-export class AppLayoutComponent implements OnInit {
+export class AppLayoutComponent implements OnInit, AfterViewInit {
 
   menuActive: boolean;
   newsActive: boolean = true;
@@ -670,7 +671,6 @@ export class AppLayoutComponent implements OnInit {
   onRepresentativeChange(event) {
     this.table.filter(event.value, "representative", "in");
   }
-
 
   ngOnDestroy() {
     if (this.subscription) {

@@ -4,22 +4,21 @@ import { LandingComponent } from './components/landing/landing.component';
 import { AppLayoutComponent } from './layouts/default/app.layout.component';
 import { AdminGuardService } from './core/auth/guards/admin.guard';
 import { AppProtectedResolver } from './services/app.protected.resolver';
-import { BlankComponent } from './layouts/blank/blank.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
-                path: '',
-                component: LandingComponent,
-                pathMatch: 'full'
-            },
-            {
                 path: '', component: AppLayoutComponent,
                 children: [
+                    // {
+                    //     path: '',
+                    //     redirectTo: 'home',
+                    //     pathMatch: 'full'
+                    // },
                     {
                         path: '',
-                        redirectTo: 'home',
+                        component: LandingComponent,
                         pathMatch: 'full'
                     },
                     {
@@ -59,7 +58,7 @@ import { BlankComponent } from './layouts/blank/blank.component';
             },
             {
                 path: '',
-                component: BlankComponent,
+                component: AppLayoutComponent,
                 children: [
                     {
                         path: ':id',
