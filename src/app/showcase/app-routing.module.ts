@@ -1,3 +1,4 @@
+import { BlankComponent } from './layouts/blank/blank.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './components/landing/landing.component';
@@ -9,18 +10,20 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
     imports: [
         RouterModule.forRoot([
             {
-                path: '', component: AppLayoutComponent,
+                path: '',
+                component: BlankComponent,
                 children: [
-                    // {
-                    //     path: '',
-                    //     redirectTo: 'home',
-                    //     pathMatch: 'full'
-                    // },
                     {
                         path: '',
                         component: LandingComponent,
                         pathMatch: 'full'
-                    },
+                    }
+                ],
+            },
+            {
+                path: '',
+                component: AppLayoutComponent,
+                children: [
                     {
                         path: 'netas',
                         loadChildren: () => import('./components/netas/netas.module').then(m => m.NetasModule)

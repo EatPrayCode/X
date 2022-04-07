@@ -1,129 +1,137 @@
-<div class="landing-intro">
+<div class="header">
+    <div class="header_left">
+        <img src="https://thatanjan.github.io/tesla-clone-yt/media/tesla_logo.svg" alt="">
+    </div>
+    <div class="header_mid">
+        <ul>
+            <li><a href="#">Model S</a></li>
+            <li><a href="#">Model 3</a></li>
+            <li><a href="#">Model X</a></li>
+            <li><a href="#">Model Y</a></li>
+            <li><a href="#">solar roof</a></li>
+            <li><a href="#">solar panels</a></li>
+        </ul>
+    </div>
+    <div class="header_right">
+        <ul>
+            <li class="hide_manu"><a href="#">shop</a></li>
+            <li class="hide_manu"><a href="#">account</a></li>
+            <li><a href="#">menu</a></li>
+        </ul>
+    </div>
+</div>
 
-    <section class="landing-hero flex align-items-center flex-column justify-content-center relative"
-        [ngClass]="{'hero-animation': setAnimation}">
-        <div class="hero-inner z-2 relative">
-            <div class="flex flex-column md:align-items-center md:flex-row">
-                <div class="p-2 flex flex-row md:flex-column">
-                    <a [routerLink]="'visualize'">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem flex align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/templates-icon.svg"
-                                    alt="primeng templates" />
-                                <div class="name">
-                                    <b>Visualize</b>
-                                    <span>1800+ Datasets</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a [routerLink]="['netas']">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem ml-4 md:ml-0 md:mt-4 flex align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/designer-icon.svg"
-                                    alt="primeng templates" />
-                                <div class="name">
-                                    <b>Self-Governance</b>
-                                    <span>1500+ Services</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="p-2 flex flex-row md:flex-column">
-                    <a [routerLink]="'news'">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem flex align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/core-icon.svg" alt="primeng core" />
-                                <div class="name">
-                                    <b>News</b>
-                                    <span>80+ Media Houses</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a [routerLink]="['home']">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem logo hidden md:flex my-4 align-items-center justify-content-center">
-                            <div class="hero-box-inner text-center">
-                                <img src="assets/showcase/images/landing/overview-icon.svg" alt="primeng main" />
-                                <div class="name flex flex-column">
-                                    <b class="font-bold mb-1">Organize</b>
-                                    <b class="font-bold">Campaign Manager</b>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a [routerLink]="['blog']">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem flex ml-4 md:ml-0 align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/css-icon.svg" alt="primeng icons" />
-                                <div class="name">
-                                    <b>Blog</b>
-                                    <span>100+ Authors</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="p-2 flex flex-row md:flex-column">
-                    <a [routerLink]="'netas'">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem flex align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/blocks-icon.svg" alt="primeng templates" />
-                                <div class="name">
-                                    <b>Explore</b>
-                                    <span>3000+ Netas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a [routerLink]="['store']">
-                        <div
-                            class="hero-box w-10rem h-10rem md:w-12rem md:h-10rem flex ml-4 md:ml-0 md:mt-4 align-items-center justify-content-center">
-                            <div class="flex flex-column align-items-center">
-                                <img src="assets/showcase/images/landing/icons-icon.svg" alt="primeng templates" />
-                                <div class="name">
-                                    <b>Store</b>
-                                    <span>2000+ Merchandize</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-border-top hidden md:block"></div>
-            <div class="hero-border-left hidden md:block"></div>
-            <div class="hero-border-right hidden md:block"></div>
+<!-- ***************** header end ******************** -->
+
+<section id="fullpage">
+    <section class="section section_1 ">
+        <div class="text_box">
+            <h1 class="heding">Model 3 </h1>
+            <p class="sub_heding">
+                <span>Order Online for</span>
+                <a href="#">Touchless Delivery</a>
+            </p>
         </div>
-
-        <section class="landing-getstarted mt-4 z-1">
-
-            <a class="linkbox active font-semibold mr-2 py-3 px-4"
-                [routerLink]="'home'">
-                Get Started
-                <i class="pi pi-arrow-right ml-3"></i>
-            </a>
-
-            <div
-                class="box download-box font-medium ml-2 p-3 px-4 mt- md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center">
-                <i class="download-icon pi pi-download mr-3"></i>
-                <span class="font-bold" :style="{fontFamily:'monaco'}" [routerLink]="'netas'">
-                    Explore
-                </span>
-            </div>
-
-        </section>
-
-        <div class="hero-bg absolute top-0 left-0 right-0 bottom-0 z-0">
-            <div class="hero-strip-top"></div>
-            <div class="hero-strip-left"></div>
+        <div class="btn_box">
+            <button class="primary_btn">Custom Order</button>
+            <button class="secondary_btn">Existing Inventory</button>
         </div>
     </section>
 
-</div>
+    <section class="section section_2">
+        <div class="text_box">
+            <h1 class="heding">Model S </h1>
+            <p class="sub_heding">
+                <span>Order Online for</span>
+                <a href="#">Touchless Delivery</a>
+            </p>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Custom Order</button>
+            <button class="secondary_btn">Existing Inventory</button>
+        </div>
+    </section>
+
+
+    <section class="section section_3">
+        <div class="text_box">
+            <h1 class="heding">Model Y </h1>
+            <p class="sub_heding">
+                <span>Order Online for</span>
+                <a href="#">Touchless Delivery</a>
+            </p>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Custom Order</button>
+            <button class="secondary_btn">Existing Inventory</button>
+        </div>
+    </section>
+
+    <section class="section section_4">
+        <div class="text_box">
+            <h1 class="heding">Model X </h1>
+            <p class="sub_heding">
+                <span>Order Online for</span>
+                <a href="#">Touchless Delivery</a>
+            </p>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Custom Order</button>
+            <button class="secondary_btn">Existing Inventory</button>
+        </div>
+    </section>
+
+    <section class="section section_5">
+        <div class="text_box">
+            <h1 class="heding">solar panels </h1>
+            <p class="sub_heding">
+                <span>Lowest Cost Solar Panels In America </span>
+            </p>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Order now</button>
+            <button class="secondary_btn">Learn more</button>
+        </div>
+    </section>
+
+    <section class="section section_6">
+        <div class="text_box">
+            <h1 class="heding">Solar roofs</h1>
+            <p class="sub_heding">
+                <span>Produce Clean Energy From Your Roof </span>
+            </p>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Order now</button>
+            <button class="secondary_btn">Learn more</button>
+        </div>
+    </section>
+
+    <section class="section section_7">
+        <div class="text_box">
+            <h1 class="heding">Accessories</h1>
+        </div>
+        <div class="btn_box">
+            <button class="primary_btn">Shop now</button>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li><a href="#">Tesla © 2021</a></li>
+                <li><a href="#">Privacy & Legal</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">careers</a></li>
+                <li><a href="#">news</a></li>
+                <li><a href="#">engage</a></li>
+                <li><a href="#">locations</a></li>
+
+            </ul>
+        </div>
+    </section>
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
+    integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
