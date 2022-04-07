@@ -26,107 +26,34 @@
 <section id="fullpage">
     <section class="section section_1 ">
         <div class="text_box">
-            <h1 class="heding">Model 3 </h1>
+            <h1 class="heding">nconnect.com </h1>
             <p class="sub_heding">
-                <span>Order Online for</span>
-                <a href="#">Touchless Delivery</a>
+                <span>Connecting </span>
+                <span>Netas</span>
             </p>
         </div>
         <div class="btn_box">
-            <button class="primary_btn">Custom Order</button>
-            <button class="secondary_btn">Existing Inventory</button>
+            <button class="primary_btn" [routerLink]="'netas'">Explore</button>
+            <button class="secondary_btn" [routerLink]="'netas'">Start as Neta</button>
         </div>
     </section>
 
-    <section class="section section_2">
-        <div class="text_box">
-            <h1 class="heding">Model S </h1>
-            <p class="sub_heding">
-                <span>Order Online for</span>
-                <a href="#">Touchless Delivery</a>
-            </p>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Custom Order</button>
-            <button class="secondary_btn">Existing Inventory</button>
-        </div>
-    </section>
+    <section class="landing-getstarted mt-4 z-1">
 
+        <a class="linkbox active font-semibold mr-2 py-3 px-4 fadeinleft animation-duration-2000 animation-ease-out"
+            [routerLink]="'home'">
+            Get Started
+            <i class="pi pi-arrow-right ml-3"></i>
+        </a>
 
-    <section class="section section_3">
-        <div class="text_box">
-            <h1 class="heding">Model Y </h1>
-            <p class="sub_heding">
-                <span>Order Online for</span>
-                <a href="#">Touchless Delivery</a>
-            </p>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Custom Order</button>
-            <button class="secondary_btn">Existing Inventory</button>
-        </div>
-    </section>
-
-    <section class="section section_4">
-        <div class="text_box">
-            <h1 class="heding">Model X </h1>
-            <p class="sub_heding">
-                <span>Order Online for</span>
-                <a href="#">Touchless Delivery</a>
-            </p>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Custom Order</button>
-            <button class="secondary_btn">Existing Inventory</button>
-        </div>
-    </section>
-
-    <section class="section section_5">
-        <div class="text_box">
-            <h1 class="heding">solar panels </h1>
-            <p class="sub_heding">
-                <span>Lowest Cost Solar Panels In America </span>
-            </p>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Order now</button>
-            <button class="secondary_btn">Learn more</button>
-        </div>
-    </section>
-
-    <section class="section section_6">
-        <div class="text_box">
-            <h1 class="heding">Solar roofs</h1>
-            <p class="sub_heding">
-                <span>Produce Clean Energy From Your Roof </span>
-            </p>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Order now</button>
-            <button class="secondary_btn">Learn more</button>
-        </div>
-    </section>
-
-    <section class="section section_7">
-        <div class="text_box">
-            <h1 class="heding">Accessories</h1>
-        </div>
-        <div class="btn_box">
-            <button class="primary_btn">Shop now</button>
+        <div
+            class="box download-box font-medium ml-2 p-3 px-4 mt- md:mt-0 md:ml-3 bg-transparent inline-flex align-items-center fadeinright animation-duration-2000 animation-ease-out">
+            <i class="download-icon pi pi-download mr-3"></i>
+            <span class="font-bold" :style="{fontFamily:'monaco'}" [routerLink]="'netas'">
+                Explore
+            </span>
         </div>
 
-        <div class="footer">
-            <ul>
-                <li><a href="#">Tesla © 2021</a></li>
-                <li><a href="#">Privacy & Legal</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="#">careers</a></li>
-                <li><a href="#">news</a></li>
-                <li><a href="#">engage</a></li>
-                <li><a href="#">locations</a></li>
-
-            </ul>
-        </div>
     </section>
 </section>
 
