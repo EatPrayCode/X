@@ -11,7 +11,11 @@ if (environment.production) {
 if (environment.production) {
   platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
-  enableProdMode();
+  setTimeout(() => {
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.log(err));
+    enableProdMode();
+  }, 5000);
 }
 
 if (environment.test) {
@@ -19,7 +23,6 @@ if (environment.test) {
     platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.log(err));
     enableProdMode();
-      
   }, 5000);
 }
 
