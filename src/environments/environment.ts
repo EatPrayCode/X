@@ -7,7 +7,7 @@ export const environment = {
   apiUrl: 'https://www.primefaces.org/data/customers',
   appName: 'nconnect',
   envName: 'DEV',
-  test: false,
+  test: true,
   i18nPrefix: '',
   firebase: {
     apiKey: "AIzaSyBftNmBTAU9tOJIJY82wftmLWmftwxqRJs",

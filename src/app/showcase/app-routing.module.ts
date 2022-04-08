@@ -5,6 +5,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { AppLayoutComponent } from './layouts/default/app.layout.component';
 import { AdminGuardService } from './core/auth/guards/admin.guard';
 import { AppProtectedResolver } from './services/app.protected.resolver';
+import { NetaLayoutComponent } from './layouts/neta-layout/neta-layout.component';
 
 @NgModule({
     imports: [
@@ -61,7 +62,7 @@ import { AppProtectedResolver } from './services/app.protected.resolver';
             },
             {
                 path: '',
-                component: AppLayoutComponent,
+                component: NetaLayoutComponent,
                 children: [
                     {
                         path: ':id',

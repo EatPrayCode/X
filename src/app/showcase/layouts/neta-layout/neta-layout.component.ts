@@ -43,11 +43,11 @@ interface City {
 }
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './app.layout.component.html',
-  styleUrls: ['./app.layout.component.scss']
+  selector: 'neta-layout',
+  templateUrl: './neta-layout.component.html',
+  styleUrls: ['./neta-layout.component.scss']
 })
-export class AppLayoutComponent implements OnInit, AfterViewInit {
+export class NetaLayoutComponent implements OnInit, AfterViewInit {
 
   menuActive: boolean;
   newsActive: boolean = true;
@@ -271,7 +271,7 @@ export class AppLayoutComponent implements OnInit, AfterViewInit {
 
   OninitCore(): void {
     this.storageService.testLocalStorage();
-    if (AppLayoutComponent.isIEorEdgeOrSafari()) {
+    if (NetaLayoutComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         actionSettingsChangeAnimationsPageDisabled({
           pageAnimationsDisabled: true
@@ -707,3 +707,4 @@ export class AppLayoutComponent implements OnInit, AfterViewInit {
     }
   }
 }
+

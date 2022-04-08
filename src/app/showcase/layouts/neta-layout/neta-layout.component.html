@@ -1,0 +1,156 @@
+<div class="layout-wrapper landing {{config.dark ? 'landing-dark' : 'landing-light'}}">
+
+    <div class="">
+
+        <section #containerElement class="landing-header pad-section" [ngClass]="{'landing-header-active': menuActive}">
+            <span>
+                <a href="">
+                    <img src="assets/showcase/images/primeng-logo-{{config.dark ? 'light' : 'dark'}}.svg" alt="PrimeNG"
+                        class="landing-header-logo">
+                </a>
+            </span>
+
+            <div class="flex align-items-center">
+                <nav class="scalein origin-top">
+                    <ol
+                        class="list-none m-0 p-0 flex flex-column lg:flex-row flex-wrap lg:flex-nowrap lg:align-items-center font-semibold">
+                        <li class="mr-0 lg:mr-2 lg:hidden">
+                            <a [routerLink]="['home']">
+                                <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2 lg:hidden">
+                            <a [routerLink]="['netas']">
+                                <img src="assets/showcase/images/landing/core-icon.svg" alt="Primeng core">
+                                <span>Netas</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2 lg:hidden">
+                            <a [routerLink]="['admin-dashboard']">
+                                <img src="assets/showcase/images/landing/blocks-icon.svg" alt="Primeng blocks">
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2 lg:hidden">
+                            <a [routerLink]="['dashboard']">
+                                <img src="assets/showcase/images/landing/designer-icon.svg" alt="Primeng designer">
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="mr-0 lg:mr-2 lg:hidden">
+                            <a [routerLink]="['home']">
+                                <img src="assets/showcase/images/landing/templates-icon.svg" alt="Primeng templates">
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+
+                <mat-menu #menu="matMenu">
+                    <mat-list style="min-width: 15rem;">
+                        <mat-list-item *ngFor="let helper of HELPERS">
+                            <img matListAvatar src="{{helper.image}} " alt="...">
+                            <h3 matLine> {{helper.name}} </h3>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <img matListAvatar src="https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1" alt="...">
+                            <h3 matLine (click)="onLogoutClick()"> Logout </h3>
+                        </mat-list-item>
+                    </mat-list>
+                    <!-- <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Company (disabled)</mat-label>
+                        <input matInput disabled value="Google">
+                      </mat-form-field>
+                  
+                      <table class="example-full-width" cellspacing="0">
+                        <tr>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>First name</mat-label>
+                              <input matInput>
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Long Last Name That Will Be Truncated</mat-label>
+                              <input matInput>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                      </table>
+                  
+                      <p>
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Address</mat-label>
+                          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Address 2</mat-label>
+                          <textarea matInput></textarea>
+                        </mat-form-field>
+                      </p>
+                    </form> -->
+                </mat-menu>
+
+                <a *ngIf="language$ | async as language" class="">
+                    {{language.toUpperCase()}}
+                </a>
+
+                <span *ngIf="language$ | async as language" class="">
+                    <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
+                        <mat-option *ngFor="let l of languages" [value]="l">
+                            {{ l.toUpperCase() }}
+                        </mat-option>
+                    </mat-select>
+                </span>
+
+                <button class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 mr-2 menu-button" *ngIf="(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    [matMenuTriggerFor]="menu" matTooltip="">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+
+                <button *ngIf="!(stateService.appSettingsSubject | async)?.uid" mat-button mat-icon-button
+                    (click)="openLoginDialog()" matTooltip="">
+                    <mat-icon>power_settings_new</mat-icon>
+                </button>
+
+                <button type="button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center"
+                    (click)="toggleDarkMode()">
+                    <i class="pi pi-{{config.dark ? 'sun' : 'moon'}}"></i>
+                </button>
+
+                <button
+                    class="linkbox header-button inline-flex align-items-center justify-content-center ml-2 menu-button"
+                    (click)="menuActive = !menuActive">
+                    <i class="pi pi-bars"></i>
+                </button>
+            </div>
+        </section>
+
+        <p-overlayPanel [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" #userop [dismissable]="true"
+            [showCloseIcon]="true">
+            <ng-template pTemplate>
+
+                <button type="button"
+                    class="linkbox header-button inline-flex align-items-center justify-content-center"
+                    (click)="onLogoutClick()">
+                    Logout
+                </button>
+
+            </ng-template>
+        </p-overlayPanel>
+
+    </div>
+
+    <div class="layout-content">
+        <div class="layout-content-inner h-full">
+            <router-outlet></router-outlet>
+        </div>
+
+        <app-footer></app-footer>
+    </div>
+
+</div>
